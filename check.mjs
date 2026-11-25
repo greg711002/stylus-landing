@@ -33,6 +33,16 @@ const LOCALES = [
   { code: 'tr', file: 'tr/index.html', path: '/tr/', og: 'tr_TR' },
   { code: 'id', file: 'id/index.html', path: '/id/', og: 'id_ID' },
 ];
+
+// Public origin of the deployed site — must mirror SITE in
+// tools/make-locales.mjs. hreflang links are asserted to be fully qualified
+// under this origin.
+const SITE = 'https://greg711002.github.io/stylus-landing';
+
+// Relative href from one locale page to another, mirroring relHref in
+// tools/make-locales.mjs: en lives at the root, every other locale one folder
+// below it, so sub-folder pages climb one level with '../' first.
+const relHref = (fromCode, toCode) => (fromCode === 'en' ? '' : '../') + (toCode === 'en' ? '' : `${toCode}/`);
 const PAGES = LOCALES.map((loc) => ({ file: loc.file, label: loc.file, lang: loc.code, rtl: Boolean(loc.rtl) }));
 
 async function exists(p) {
@@ -80,8 +90,9 @@ for (const page of PAGES) {
   // Every page must link to each of its siblings, never to itself, and mark
   // exactly one locale as the current one.
   for (const other of LOCALES.filter((l) => l.code !== page.lang)) {
-    if (!html.includes(`class="lang" href="${other.path}"`)) {
-      problems.push(`SWITCHER ${page.label}: no link to ${other.path} (${other.code})`);
+    const rel = relHref(page.lang, other.code);
+    if (!html.includes(`class="lang" href="${rel}"`)) {
+      problems.push(`SWITCHER ${page.label}: no link to ${rel} (${other.code})`);
     }
   }
   if (new RegExp(`class="lang" href="[^"]*" hreflang="${page.lang}"`).test(html)) {
@@ -104,6 +115,15 @@ for (const page of PAGES) {
   }
   for (const hl of [...LOCALES.map((l) => l.code), 'x-default']) {
     if (!html.includes(`hreflang="${hl}"`)) problems.push(`HREFLANG ${page.label}: missing hreflang="${hl}"`);
+  }
+  // hreflang must be fully qualified under the published origin (Google ignores
+  // relative hreflang), so assert the exact absolute URL rather than a token.
+  for (const loc of LOCALES) {
+    const expected = `<link rel="alternate" hreflang="${loc.code}" href="${SITE}${loc.path}">`;
+    if (!html.includes(expected)) problems.push(`HREFLANG ${page.label}: expected ${expected}`);
+  }
+  if (!html.includes(`<link rel="alternate" hreflang="x-default" href="${SITE}/">`)) {
+    problems.push(`HREFLANG ${page.label}: x-default is not ${SITE}/`);
   }
 
   // PWA hooks: a manifest link pointing at the root manifest (resolved below
@@ -131,7 +151,11 @@ for (const page of PAGES) {
 
 for (const { ref, from, base } of refs) {
   if (/^(https?:|mailto:|tel:|data:|#|\/)/.test(ref)) continue;
-  const target = resolve(base, ref.split('?')[0].split('#')[0]);
+  let target = resolve(base, ref.split('?')[0].split('#')[0]);
+  // A relative directory link (the language switcher's "pl/", "ru/") is served
+  // as that folder's index.html both by serve.mjs and by GitHub Pages.
+  const info = await stat(target).catch(() => null);
+  if (info && info.isDirectory()) target = join(target, 'index.html');
   if (checked.has(target)) continue;
   checked.add(target);
   if (!(await exists(target))) problems.push(`MISSING ${relative(ROOT, target)}  (referenced from ${from})`);

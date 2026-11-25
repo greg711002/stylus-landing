@@ -7,6 +7,10 @@ languages**: English, Polish, Russian, Simplified Chinese, Spanish, Hindi, Portu
 (BR), Bengali, French, German, Japanese, Arabic (RTL), Korean, Italian, Turkish and
 Indonesian.
 
+**Live site:** https://greg711002.github.io/stylus-landing/ (GitHub Pages, project
+site under the `/stylus-landing/` sub-path — all page links are relative, hreflang
+URLs absolute).
+
 ## Preview
 
 ```bash

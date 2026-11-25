@@ -29,7 +29,7 @@ const SRC = join(ROOT, 'index.html');
 const DRY = process.argv.includes('--dry');
 
 // One row per locale. `dir` is the output folder ('' = site root), `path` is the
-// public URL used in hreflang and in the switcher, `og` is og:locale.
+// site-relative public URL behind SITE (used for hreflang), `og` is og:locale.
 const LOCALES = [
   { code: 'en', dir: '', path: '/', label: 'English', short: 'EN', og: 'en_US' },
   { code: 'pl', dir: 'pl', path: '/pl/', label: 'Polski', short: 'PL', og: 'pl_PL' },
@@ -48,6 +48,17 @@ const LOCALES = [
   { code: 'tr', dir: 'tr', path: '/tr/', label: 'Türkçe', short: 'TR', og: 'tr_TR' },
   { code: 'id', dir: 'id', path: '/id/', label: 'Bahasa Indonesia', short: 'ID', og: 'id_ID' },
 ];
+
+// Public origin of the deployed site (GitHub Pages project site under
+// /stylus-landing/). hreflang must be fully qualified per Google's spec, so the
+// <link rel="alternate"> set is built from this constant. The language switcher
+// stays RELATIVE on purpose: the same generated files must work in the local
+// preview, on the /stylus-landing/ sub-path and on a future custom domain
+// without a rebuild.
+const SITE = 'https://greg711002.github.io/stylus-landing';
+
+/** Relative href from the page of `from` to the page of `to` ('' dirs = root). */
+const relHref = (from, to) => (from.dir ? '../' : '') + (to.dir ? `${to.dir}/` : '');
 
 // Keys handled outside the body pass, with the reason.
 const HEAD = ['meta_title', 'meta_description', 'og_title', 'og_description'];
@@ -174,8 +185,9 @@ function buildChrome(html, loc) {
     out = out.replace(pattern, replacement);
   }
 
-  // og:locale + reciprocal hreflang. Absolute URLs are deliberately absent until
-  // the production domain is known - same TODO as og:url/og:image/canonical.
+  // og:locale + reciprocal hreflang. Hreflang URLs are fully qualified (built
+  // from SITE) because Google's spec requires absolute URLs there; the switcher
+  // below deliberately stays relative.
   // Drop the existing lines first: keeps the script idempotent and prevents a
   // page from ending up with two og:locale values.
   out = out.replace(/^[ \t]*<meta property="og:locale(:alternate)?"[^\n]*\n/gm, '');
@@ -183,8 +195,8 @@ function buildChrome(html, loc) {
   const localeBlock = [
     `<meta property="og:locale" content="${loc.og}">`,
     ...LOCALES.filter((o) => o.code !== loc.code).map((o) => `<meta property="og:locale:alternate" content="${o.og}">`),
-    ...LOCALES.map((o) => `<link rel="alternate" hreflang="${o.code}" href="${o.path}">`),
-    `<link rel="alternate" hreflang="x-default" href="/">`,
+    ...LOCALES.map((o) => `<link rel="alternate" hreflang="${o.code}" href="${SITE}${o.path}">`),
+    `<link rel="alternate" hreflang="x-default" href="${SITE}/">`,
   ].join('\n');
   if (!/<meta name="twitter:card"[^>]*>/.test(out)) throw new Error('twitter:card anchor not found');
   out = out.replace(/(<meta name="twitter:card"[^>]*>)/, `$1\n${localeBlock}`);
@@ -199,7 +211,7 @@ function buildChrome(html, loc) {
   out = out.replace(/^[ \t]*<a class="lang"[^\n]*<\/a>\n/gm, '');
   const label = dict.lang_switch_label;
   const items = LOCALES.filter((o) => o.code !== loc.code).map((o) => (
-    `                <li><a class="lang" href="${o.path}" hreflang="${o.code}" lang="${o.code}" aria-label="${escapeHtml(label)}: ${escapeHtml(o.label)}">${o.short}</a></li>`
+    `                <li><a class="lang" href="${relHref(loc, o)}" hreflang="${o.code}" lang="${o.code}" aria-label="${escapeHtml(label)}: ${escapeHtml(o.label)}">${o.short}</a></li>`
   ));
   const switcher = [
     `          <div class="lang-switch" role="group" aria-label="${escapeHtml(label)}">`,
@@ -226,6 +238,14 @@ function buildChrome(html, loc) {
   const selfLink = `hreflang="${loc.code}"`;
   if (!out.includes(selfLink)) throw new Error(`${loc.code}: hreflang for its own locale is missing`);
   if (/class="lang" href="[^"]*"[^>]*hreflang="en"/.test(out) && loc.code === 'en') throw new Error('en: switcher links to itself');
+  // Nothing on the page may point at the server root: the site is published
+  // under a /stylus-landing/ sub-path, where "/pl/" is a 404.
+  const rootRelative = out.match(/(?:href|src)="\/(?!\/)[^"]*"/g);
+  if (rootRelative) throw new Error(`${loc.code}: root-relative URL(s) left: ${rootRelative.join(', ')}`);
+  for (const o of LOCALES) {
+    const expected = `<link rel="alternate" hreflang="${o.code}" href="${SITE}${o.path}">`;
+    if (!out.includes(expected)) throw new Error(`${loc.code}: hreflang for ${o.code} is not ${expected}`);
+  }
 
   return out;
 }
