@@ -1,0 +1,427 @@
+/* ==========================================================================
+   Stylus AI — landing page
+   Rebuilt from the Webflow export: no framework, no runtime, no external CDN.
+   ========================================================================== */
+
+/* --- Fonts ---------------------------------------------------------------- */
+@font-face{font-family:'Stolzl';src:url('../fonts/Stolzl-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Stolzl';src:url('../fonts/Stolzl-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Stolzl';src:url('../fonts/Stolzl-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Stolzl';src:url('../fonts/Stolzl-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+
+/* --- Tokens --------------------------------------------------------------- */
+:root{
+  --navy:#2b3f6c;
+  --navy-hover:#3d5385;
+  --navy-deep:#375089;
+  --muted:#63708b;
+  --tint:#f4f8fb;
+  --line:#dbe6ef;
+  --line-soft:#e7eff5;
+  --white:#fff;
+  --star:#f7a826;
+
+  --container:1344px;
+  --pad-x:clamp(16px,4vw,40px);
+  --r-section:clamp(24px,2.78vw,40px);
+  --r-card:16px;
+  --section-y:clamp(18px,2.2vw,30px);
+  --slide-gap:clamp(16px,2vw,24px);
+
+  --shadow-sm:0 2px 10px rgba(43,63,108,.06);
+  --shadow-md:0 14px 38px rgba(43,63,108,.12);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* --- Reset ---------------------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:clamp(88px,9vw,120px)}
+body{
+  margin:0;
+  overflow-x:clip;
+  background:var(--white);
+  color:var(--navy);
+  /* Stolzl covers Latin and Cyrillic only, so the scripts that follow it are
+     real fallbacks for the non-Latin locales: without them Chinese, Hindi and
+     Bengali text is rendered in whatever the OS picks, at a mismatched weight.
+     Latin text always resolves in Stolzl first, so the order is inert for
+     English, Polish and Russian. */
+  font-family:
+    'Stolzl','Segoe UI',
+    'Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',
+    'Noto Sans Devanagari','Nirmala UI','Mangal',
+    'Noto Sans Bengali','Bangla MN',
+    'Noto Sans Arabic','Geeza Pro','Tahoma',
+    system-ui,-apple-system,sans-serif;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  /* Inherited: a single word longer than the viewport (e.g. the Russian
+     "персонализированно" in the hero) must break instead of being clipped,
+     which is what a translated locale can otherwise do at 320px. */
+  overflow-wrap:break-word;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+h1,h2,h3,p,figure,blockquote,ol,ul{margin:0}
+ol,ul{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+cite{font-style:normal}
+:focus-visible{outline:3px solid var(--navy-deep);outline-offset:3px;border-radius:6px}
+
+/* --- Script-specific typography ------------------------------------------- */
+/* Keyed off <html lang>, which every localized page sets. CJK has no use for
+   the negative Latin tracking, and Devanagari, Bengali and Arabic stack marks
+   above and below the baseline, so their headings need more leading than the
+   1.12 / 1.16 the Latin design uses. Arabic joins its letters, so any positive
+   tracking would visibly pull the glyphs apart. */
+html:lang(zh) h1,html:lang(zh) h2,html:lang(zh) h3,
+html:lang(ja) h1,html:lang(ja) h2,html:lang(ja) h3,
+html:lang(ko) h1,html:lang(ko) h2,html:lang(ko) h3,
+html:lang(hi) h1,html:lang(hi) h2,html:lang(hi) h3,
+html:lang(bn) h1,html:lang(bn) h2,html:lang(bn) h3,
+html:lang(ar) h1,html:lang(ar) h2,html:lang(ar) h3{letter-spacing:0}
+html:lang(zh) body,html:lang(ja) body,html:lang(ko) body{line-height:1.7}
+html:lang(hi) body,html:lang(bn) body{line-height:1.65}
+html:lang(ar) body{line-height:1.75}
+html:lang(hi) h1,html:lang(hi) h2,html:lang(hi) h3,
+html:lang(bn) h1,html:lang(bn) h2,html:lang(bn) h3{line-height:1.32}
+html:lang(ja) h1,html:lang(ja) h2,html:lang(ja) h3,
+html:lang(ko) h1,html:lang(ko) h2,html:lang(ko) h3{line-height:1.35}
+html:lang(ar) h1,html:lang(ar) h2,html:lang(ar) h3{line-height:1.4}
+
+/* --- Right-to-left -------------------------------------------------------- */
+/* Only four rules in this sheet set a physical direction, and they are the whole
+   mirror the Arabic page needs: the rest of the layout already uses logical
+   properties (margin-inline, padding-inline, inset-inline). */
+[dir="rtl"] .navbar__menu{margin-left:0;margin-right:auto}
+[dir="rtl"] .navbar__toggle{margin-left:0;margin-right:auto}
+[dir="rtl"] .btn:hover .btn__icon{transform:translateX(-3px)}
+[dir="rtl"] .slider__arrow svg{transform:scaleX(-1)}
+
+/* --- Utilities ------------------------------------------------------------ */
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--pad-x)}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:fixed;left:12px;top:-100px;z-index:200;background:var(--navy);color:#fff;padding:12px 20px;border-radius:12px;transition:top .2s var(--ease)}
+.skip-link:focus{top:12px}
+
+/* --- Buttons -------------------------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 32px;border-radius:999px;
+  background:var(--navy);color:#fff;
+  font-size:clamp(15px,1.1vw,18px);font-weight:400;line-height:1.33;text-align:center;
+  transition:background-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease),color .2s var(--ease);
+}
+.btn:hover{background:var(--navy-hover);transform:translateY(-1px);box-shadow:0 10px 24px rgba(43,63,108,.22)}
+.btn:active{transform:translateY(0)}
+.btn__icon{flex:none;transition:transform .25s var(--ease)}
+.btn:hover .btn__icon{transform:translateX(3px)}
+.btn--lg{padding:18px 36px;font-size:clamp(16px,1.2vw,20px)}
+.btn--ghost{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1.5px #76849c}
+.btn--ghost:hover{background:#fff;box-shadow:inset 0 0 0 1.5px var(--navy);transform:translateY(-1px)}
+
+/* --- Header / navbar ------------------------------------------------------ */
+.site-header{position:sticky;top:0;z-index:100;background:var(--white);padding-top:clamp(12px,1.6vw,24px)}
+.navbar{
+  position:relative;display:flex;align-items:center;gap:clamp(16px,2.4vw,48px);
+  background:var(--tint);border-radius:clamp(16px,1.48vw,24px);
+  padding:clamp(8px,.8vw,12px) clamp(12px,1.4vw,20px);
+}
+.navbar__brand{display:inline-flex;flex:none}
+.navbar__brand img{width:clamp(40px,3.2vw,52px);height:auto;border-radius:12px}
+.navbar__menu{display:flex;align-items:center;gap:clamp(16px,2.4vw,48px);margin-left:auto}
+.navbar__links{display:flex;align-items:center;gap:clamp(16px,2vw,36px);font-size:16px}
+.navbar__links a{padding:6px 2px;transition:color .2s var(--ease)}
+.navbar__links a:hover{color:var(--navy-hover)}
+.navbar__actions{display:flex;align-items:center;gap:12px}
+/* Language switcher: a real link, so it works with scripts disabled and is
+   crawlable. 14px text with 9px of padding keeps the tap target at 32px tall,
+   past the 24px minimum of WCAG 2.5.8. */
+.lang{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:32px;padding:0 10px;border-radius:8px;
+  color:var(--navy);font-size:14px;font-weight:500;letter-spacing:.06em;
+  transition:background-color .2s var(--ease),color .2s var(--ease);
+}
+.lang:hover{background:#fff;color:var(--navy-hover)}
+/* All locales sit in one group so the pills read as a single control. Wrapping
+   is allowed because the group now carries eight languages: a two-line switcher
+   is better than a navbar that overflows. */
+.lang-switch{display:flex;align-items:center;flex-wrap:wrap;gap:2px}
+/* The current locale is a span, not a link - show it as selected instead. */
+.lang--current{background:#fff;color:var(--navy-hover);cursor:default}
+/* Sixteen locales cannot be sixteen pills in the navbar, so the switcher is a
+   <details> dropdown: the current locale is the summary, the other fifteen are
+   links. The panel anchors to the pill itself, so it opens under the control it
+   belongs to and not under the far end of the navbar. */
+.lang-picker{position:relative}
+.lang-picker>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.lang-picker>summary::-webkit-details-marker{display:none}
+.lang-picker>summary::marker{content:''}
+.lang-picker__caret{
+  width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid currentColor;transition:transform .2s var(--ease);
+}
+.lang-picker[open] .lang-picker__caret{transform:rotate(180deg)}
+.lang-picker__list{
+  position:absolute;inset-inline-end:0;top:calc(100% + 10px);z-index:60;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;
+  min-width:200px;margin:0;padding:8px;background:#fff;border-radius:16px;
+  box-shadow:0 18px 40px -14px rgba(16,32,64,.35),0 2px 6px rgba(16,32,64,.06);
+}
+.navbar__toggle{display:none;margin-left:auto;width:44px;height:44px;align-items:center;justify-content:center;border-radius:12px;color:var(--navy);transition:background-color .2s var(--ease)}
+.navbar__toggle:hover{background:#fff}
+.navbar__toggle-icon{display:block}
+.navbar__toggle-icon--close{display:none}
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon--open{display:none}
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon--close{display:block}
+/* The section links live in a <details> dropdown, built exactly like the
+   language picker: the summary is the only thing the navbar shows, the panel
+   opens under it. The <ul> keeps .navbar__links so the existing link styles and
+   the mobile rules below still apply to it. */
+.nav-picker{position:relative}
+.nav-picker>summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  padding:6px 2px;font-size:16px;transition:color .2s var(--ease);
+}
+.nav-picker>summary::-webkit-details-marker{display:none}
+.nav-picker>summary::marker{content:''}
+.nav-picker>summary:hover{color:var(--navy-hover)}
+.nav-picker__caret{
+  width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid currentColor;transition:transform .2s var(--ease);
+}
+.nav-picker[open] .nav-picker__caret{transform:rotate(180deg)}
+.nav-picker__list{
+  position:absolute;inset-inline-start:0;top:calc(100% + 10px);z-index:60;
+  display:flex;flex-direction:column;align-items:stretch;gap:2px;
+  min-width:216px;margin:0;padding:8px;background:#fff;border-radius:16px;
+  box-shadow:0 18px 40px -14px rgba(16,32,64,.35),0 2px 6px rgba(16,32,64,.06);
+}
+.nav-picker__list a{
+  display:block;padding:10px 12px;border-radius:10px;white-space:nowrap;
+  transition:background-color .2s var(--ease),color .2s var(--ease);
+}
+.nav-picker__list a:hover{background:var(--tint);color:var(--navy-hover)}
+
+/* --- Sections ------------------------------------------------------------- */
+.section{padding-block:var(--section-y)}
+.panel{background:var(--tint);border-radius:var(--r-section);padding:clamp(24px,3.9vw,56px)}
+
+.h2{
+  font-size:clamp(1.625rem,1.05rem + 2vw,2.5rem);
+  line-height:1.16;font-weight:500;letter-spacing:-.02em;text-wrap:balance;
+}
+.h2--center{text-align:center;margin-inline:auto;max-width:22ch}
+
+/* --- Hero ----------------------------------------------------------------- */
+.hero{padding-block:clamp(28px,4vw,64px) clamp(24px,3vw,48px)}
+.hero__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,3vw,48px);align-items:center}
+.hero__title{font-size:clamp(1.75rem,1.1rem + 3vw,3.5rem);line-height:1.12;font-weight:500;letter-spacing:-.02em;text-wrap:balance}
+.hero__subtitle{margin-top:clamp(14px,1.6vw,24px);max-width:34ch;color:var(--muted);font-size:clamp(1rem,.9rem + .6vw,1.375rem);line-height:1.4}
+.hero__content .btn{margin-top:clamp(24px,3vw,40px)}
+.hero__media img{width:100%;height:auto}
+
+/* --- How it works --------------------------------------------------------- */
+.how{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3.4vw,48px);align-items:start}
+.how__intro{max-width:592px}
+
+.steps{margin-top:clamp(24px,3vw,40px);display:flex;flex-direction:column}
+.step{display:flex;gap:16px;position:relative}
+.step + .step{margin-top:28px}
+.step__marker{position:relative;flex:none;width:56px;height:57px}
+.step__marker img{width:100%;height:auto}
+.step:not(:last-child) .step__marker::after{
+  content:"";position:absolute;left:50%;translate:-50% 0;top:calc(100% + 2px);
+  width:2px;height:24px;border-radius:2px;background:var(--line);
+}
+.step__title{font-size:18px;line-height:1.33;font-weight:500}
+.step__text{margin-top:4px;font-size:14px;line-height:1.43;color:var(--muted)}
+.how__intro .btn{margin-top:clamp(24px,3vw,36px)}
+
+.cards{display:flex;flex-direction:column;gap:16px}
+.card{background:#fff;border-radius:var(--r-card);padding:clamp(20px,2vw,28px);box-shadow:var(--shadow-sm)}
+.card__icon{display:block;width:40px;height:40px;margin-bottom:16px}
+.card__icon img{width:100%;height:auto}
+.card__title{font-size:clamp(17px,1.15vw,20px);line-height:1.3;font-weight:500}
+.card__text{margin-top:8px;font-size:clamp(14px,.95vw,16px);line-height:1.5;color:var(--muted)}
+
+/* --- Reviews slider ------------------------------------------------------- */
+.slider{margin-top:clamp(28px,3.4vw,48px)}
+.slider__viewport{overflow:hidden;touch-action:pan-y}
+.slider__track{display:flex;margin-inline:calc(var(--slide-gap) / -2);transition:transform .5s var(--ease)}
+.slider__slide{display:flex;flex:0 0 100%;min-width:0;padding-inline:calc(var(--slide-gap) / 2)}
+
+.review{display:flex;flex:1;flex-direction:column;background:#fff;border-radius:var(--r-card);padding:clamp(20px,2vw,28px);box-shadow:var(--shadow-sm)}
+.review__avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;margin-bottom:16px}
+.review__quote{font-size:clamp(15px,.95vw,16px);line-height:1.55}
+.review__meta{display:flex;flex-direction:column;gap:2px;margin-top:auto;padding-top:20px}
+.review__name{font-weight:500}
+.review__date{font-size:14px;color:var(--muted)}
+
+.slider__controls{display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,28px);margin-top:clamp(20px,2.4vw,32px)}
+.slider__arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:50%;flex:none;
+  color:var(--navy);background:#fff;box-shadow:var(--shadow-sm);
+  transition:background-color .2s var(--ease),color .2s var(--ease),opacity .2s var(--ease);
+}
+.slider__arrow:hover:not(:disabled){background:var(--navy);color:#fff}
+.slider__arrow:disabled{opacity:.35;cursor:not-allowed}
+.slider__dots{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:60%}
+.slider__dot{position:relative;width:8px;height:8px;padding:0;border-radius:999px;background:#7d8b9f;transition:width .25s var(--ease),background-color .25s var(--ease)}
+.slider__dot::after{content:"";position:absolute;inset:-8px 0;border-radius:999px}/* 24px-tall touch area, no visual change */
+.slider__dot[aria-current="true"]{width:24px;background:var(--navy)}
+
+/* --- Rating badges -------------------------------------------------------- */
+.ratings{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(20px,3vw,56px);margin-top:clamp(28px,3.4vw,44px)}
+.rating{display:flex;align-items:center;gap:10px}
+.rating img{width:115px;height:40px}
+.rating__score{display:inline-flex;align-items:center;gap:6px;font-size:18px;font-weight:500}
+.rating__star{color:var(--star)}
+
+/* --- Team ----------------------------------------------------------------- */
+.team__title{max-width:36ch}
+.team{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,24px);
+  margin-top:clamp(28px,3.4vw,48px);
+  height:clamp(288px,26vw,400px);overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 20%,#000 80%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 20%,#000 80%,transparent 100%);
+}
+.team__col{overflow:hidden}
+.team__list{animation:marquee 28s linear infinite;will-change:transform}
+.team__col--reverse .team__list{animation-direction:reverse}
+.team__list > li{padding-bottom:16px}
+.team:hover .team__list,.team:focus-within .team__list{animation-play-state:paused}
+@keyframes marquee{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+
+.member{display:flex;align-items:center;gap:16px;min-height:96px;background:#fff;border-radius:var(--r-card);padding:16px;box-shadow:var(--shadow-sm)}
+.member img{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover}
+.member__name{font-size:17px;line-height:1.3;font-weight:500}
+.member__role{font-size:14px;line-height:1.4;color:var(--muted)}
+
+.team__outro{display:flex;flex-direction:column;align-items:center;gap:clamp(24px,3vw,40px);margin-top:clamp(28px,3.4vw,48px);text-align:center}
+.team__goal{max-width:66ch;font-size:clamp(1rem,.9rem + .5vw,1.25rem);line-height:1.5;color:var(--muted)}
+.unis{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(16px,2.4vw,40px);width:100%}
+.unis img{width:clamp(96px,10vw,164px);height:auto}
+
+/* --- Footer --------------------------------------------------------------- */
+.footer{margin-top:clamp(32px,4vw,64px);padding-block:clamp(32px,4vw,56px) clamp(24px,3vw,40px);border-top:1px solid var(--line-soft)}
+.footer__top,.footer__mid,.footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer__brand img{width:56px;height:56px}
+.footer__nav ul{display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px)}
+.footer__nav a{transition:color .2s var(--ease)}
+.footer__nav a:hover{color:var(--navy-hover)}
+.footer__mid{margin-top:clamp(24px,3vw,40px);padding-top:clamp(24px,3vw,32px);border-top:1px solid var(--line-soft)}
+.footer__pay{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.footer__pay img{width:56px;height:24px}
+.footer__social{display:flex;align-items:center;gap:12px}
+.footer__social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;transition:background-color .2s var(--ease)}
+.footer__social a:hover{background:var(--tint)}
+.footer__contact{margin-top:clamp(20px,2.4vw,32px)}
+.footer__contacts{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:16px}
+.footer__contacts a:hover{color:var(--navy-hover)}
+.footer__dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}
+.footer__address{margin-top:8px;max-width:62ch;font-size:14px;color:var(--muted)}
+.footer__bottom{margin-top:clamp(24px,3vw,36px);padding-top:clamp(16px,2vw,24px);border-top:1px solid var(--line-soft);font-size:14px;color:var(--muted)}
+.footer__legal{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.footer__legal a:hover{color:var(--navy)}
+
+/* --- Reveal on scroll ----------------------------------------------------- */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .reveal.is-visible{opacity:1;transform:none}
+
+/* --- Responsive ----------------------------------------------------------- */
+@media (min-width:760px){
+  .slider__slide{flex-basis:50%}
+}
+@media (min-width:1080px){
+  .slider__slide{flex-basis:33.3333%}
+}
+
+@media (max-width:900px){
+  /* minmax(0,1fr), not 1fr: a 1fr track floors at min-content, so one long
+     translated word (ru "персонализированно") widened the whole hero column
+     past the 320px viewport. minmax(0,1fr) lets the track shrink and the
+     inherited overflow-wrap:break-word then breaks the word. */
+  .hero__inner{grid-template-columns:minmax(0,1fr)}
+  .hero__title,.hero__subtitle{max-width:none}
+  .how{grid-template-columns:minmax(0,1fr)}
+  .how__intro{max-width:none}
+}
+
+@media (max-width:860px){
+  .navbar__toggle{display:inline-flex}
+  .navbar__menu{
+    position:absolute;left:0;right:0;top:calc(100% + 8px);
+    display:none;flex-direction:column;align-items:stretch;gap:16px;margin-left:0;
+    background:#fff;border-radius:20px;padding:20px;box-shadow:var(--shadow-md);
+  }
+  .navbar__menu.is-open{display:flex}
+  .navbar__links{flex-direction:column;align-items:stretch;gap:4px;font-size:17px}
+  .navbar__links a{padding:10px 4px}
+  .navbar__actions{flex-direction:column;align-items:stretch}
+  .lang-switch{align-self:flex-start;margin-bottom:4px}
+  /* Inside the collapsed menu the panel must not float over the links below it. */
+  .lang-picker__list{
+    position:static;inset-inline-end:auto;top:auto;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    min-width:0;margin-top:8px;background:var(--tint);box-shadow:none;
+  }
+  /* The hamburger panel already lists the links, so the dropdown is unwrapped
+     here instead of nesting one dropdown inside another: the summary disappears
+     and the list becomes the plain column of links it was before. */
+  .nav-picker>summary{display:none}
+  .nav-picker__list{
+    position:static;inset-inline-start:auto;top:auto;z-index:auto;
+    min-width:0;padding:0;background:transparent;box-shadow:none;
+  }
+  [dir="rtl"] .navbar__menu{margin-right:0}
+}
+
+@media (max-width:700px){
+  .team{grid-template-columns:1fr}
+  .team__col--reverse{display:none}
+  .footer__top,.footer__mid,.footer__bottom{flex-direction:column;align-items:flex-start}
+  .unis img{width:clamp(88px,24vw,140px)}
+}
+
+/* Narrow screens: give the dots their own full-width row under the arrows so
+   all 12 stay on one line (12 x 8px + 11 x 16px gap = 288px). Below 376px even
+   that does not fit, so the row becomes two balanced lines of six with the same
+   24px centre pitch in both directions (WCAG 2.5.8 by spacing). */
+@media (max-width:600px){
+  .slider__controls{flex-wrap:wrap;row-gap:14px}
+  .slider__dots{order:2;flex-basis:100%;max-width:100%}
+}
+@media (max-width:375px){
+  .slider__dots{
+    display:grid;grid-template-columns:repeat(6,24px);
+    justify-content:center;align-items:center;
+    column-gap:0;row-gap:16px;
+  }
+  .slider__dot{justify-self:center}
+}
+
+/* --- Reduced motion ------------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn,.btn__icon,.slider__track,.slider__arrow,.slider__dot,.navbar__links a{transition:none}
+  .btn:hover{transform:none}
+  .btn:hover .btn__icon,[dir="rtl"] .btn:hover .btn__icon{transform:none}
+  .team{
+    grid-template-columns:1fr;
+    height:auto;overflow:visible;
+    -webkit-mask-image:none;mask-image:none;
+  }
+  .team__col--reverse{display:none}
+  .team__list{animation:none!important}
+  .team__list > li:nth-child(n+6){display:none}
+}

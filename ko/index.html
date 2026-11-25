@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stylus AI — 논문을 빠르고 쉽게, 나에게 맞게</title>
+<meta name="description" content="Stylus AI는 논문과 에세이를 더 빠르게 쓸 수 있게 돕습니다. AI가 출처를 찾아 인용까지 자동으로 달아 주고, 문장은 AI 판별기를 통과할 만큼 자연스럽습니다. 글쓰기 모든 단계에서 실제 도움을 받아 보세요. 무료로 시작할 수 있습니다.">
+<meta name="theme-color" content="#f4f8fb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stylus AI — 논문을 빠르고 쉽게, 나에게 맞게">
+<meta property="og:description" content="AI가 출처를 찾아 인용을 자동으로 달아 주고, AI 판별기를 통과하는 자연스러운 문장과 글쓰기 모든 단계의 도움을 드립니다.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="id_ID">
+<link rel="alternate" hreflang="en" href="/">
+<link rel="alternate" hreflang="pl" href="/pl/">
+<link rel="alternate" hreflang="ru" href="/ru/">
+<link rel="alternate" hreflang="zh" href="/zh/">
+<link rel="alternate" hreflang="es" href="/es/">
+<link rel="alternate" hreflang="hi" href="/hi/">
+<link rel="alternate" hreflang="pt" href="/pt/">
+<link rel="alternate" hreflang="bn" href="/bn/">
+<link rel="alternate" hreflang="fr" href="/fr/">
+<link rel="alternate" hreflang="de" href="/de/">
+<link rel="alternate" hreflang="ja" href="/ja/">
+<link rel="alternate" hreflang="ar" href="/ar/">
+<link rel="alternate" hreflang="ko" href="/ko/">
+<link rel="alternate" hreflang="it" href="/it/">
+<link rel="alternate" hreflang="tr" href="/tr/">
+<link rel="alternate" hreflang="id" href="/id/">
+<link rel="alternate" hreflang="x-default" href="/">
+<!-- Before publishing add absolute og:url + og:image (1200x630) and a canonical link for the real production domain. -->
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Stylus AI">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../assets/fonts/Stolzl-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../assets/fonts/Stolzl-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="../assets/img/hero-app.webp"
+      imagesrcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+      imagesizes="(max-width: 900px) 92vw, 48vw">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none">
+    <path d="M4.5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M12.4 5.7 18.7 12l-6.3 6.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none">
+    <path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none">
+    <path d="M9.5 5.5 16 12l-6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none">
+    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none">
+    <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar" aria-label="주요 내비게이션">
+      <a class="navbar__brand" href="#top" aria-label="Stylus AI — 홈으로">
+        <img src="../assets/img/logo.png" width="256" height="256" alt="Stylus AI">
+      </a>
+
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span class="sr-only">메뉴</span>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--open" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--close" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <div class="navbar__menu" id="nav-menu" data-nav-menu>
+        <details class="nav-picker">
+          <summary class="nav-picker__summary">메뉴<span class="nav-picker__caret" aria-hidden="true"></span></summary>
+          <ul class="navbar__links nav-picker__list">
+            <li><a href="#how-it-works">이용 방법</a></li>
+            <li><a href="#reviews">후기</a></li>
+          </ul>
+        </details>
+        <div class="navbar__actions">
+          <div class="lang-switch" role="group" aria-label="언어">
+            <details class="lang-picker">
+              <summary class="lang lang--current" aria-current="true" lang="ko">KO<span class="lang-picker__caret" aria-hidden="true"></span></summary>
+              <ul class="lang-picker__list">
+                <li><a class="lang" href="/" hreflang="en" lang="en" aria-label="언어: English">EN</a></li>
+                <li><a class="lang" href="/pl/" hreflang="pl" lang="pl" aria-label="언어: Polski">PL</a></li>
+                <li><a class="lang" href="/ru/" hreflang="ru" lang="ru" aria-label="언어: Русский">RU</a></li>
+                <li><a class="lang" href="/zh/" hreflang="zh" lang="zh" aria-label="언어: 中文（简体）">ZH</a></li>
+                <li><a class="lang" href="/es/" hreflang="es" lang="es" aria-label="언어: Español">ES</a></li>
+                <li><a class="lang" href="/hi/" hreflang="hi" lang="hi" aria-label="언어: हिन्दी">HI</a></li>
+                <li><a class="lang" href="/pt/" hreflang="pt" lang="pt" aria-label="언어: Português (BR)">PT</a></li>
+                <li><a class="lang" href="/bn/" hreflang="bn" lang="bn" aria-label="언어: বাংলা">BN</a></li>
+                <li><a class="lang" href="/fr/" hreflang="fr" lang="fr" aria-label="언어: Français">FR</a></li>
+                <li><a class="lang" href="/de/" hreflang="de" lang="de" aria-label="언어: Deutsch">DE</a></li>
+                <li><a class="lang" href="/ja/" hreflang="ja" lang="ja" aria-label="언어: 日本語">JA</a></li>
+                <li><a class="lang" href="/ar/" hreflang="ar" lang="ar" aria-label="언어: العربية">AR</a></li>
+                <li><a class="lang" href="/it/" hreflang="it" lang="it" aria-label="언어: Italiano">IT</a></li>
+                <li><a class="lang" href="/tr/" hreflang="tr" lang="tr" aria-label="언어: Türkçe">TR</a></li>
+                <li><a class="lang" href="/id/" hreflang="id" lang="id" aria-label="언어: Bahasa Indonesia">ID</a></li>
+              </ul>
+            </details>
+          </div>
+          <a class="btn btn--ghost" href="https://mystylus.ai/login/">로그인</a>
+          <a class="btn btn--primary" href="https://mystylus.ai/onboarding/">
+            체험하기
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <h1 class="hero__title">Stylus AI로 논문을 빠르고 쉽고 나답게</h1>
+        <p class="hero__subtitle">모든 텍스트는 어떤 표절 검사도 통과하고, AI 판별 시스템에도 걸리지 않습니다.</p>
+        <a class="btn btn--primary btn--lg" href="https://mystylus.ai/onboarding/">
+          글쓰기 시작
+          <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <div class="hero__media reveal">
+        <img src="../assets/img/hero-app.webp"
+             srcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+             sizes="(max-width: 900px) 92vw, 48vw"
+             width="1376" height="1280" fetchpriority="high" decoding="async"
+             alt="Stylus AI 편집기 화면. 논문 개요 옆에 AI가 생성한 문단과 추천 출처가 나란히 보입니다.">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="panel">
+        <div class="how">
+          <div class="how__intro">
+            <h2 class="h2 reveal">AI로 에세이 쓰기, 더 쉽고 탄탄하게</h2>
+
+            <ol class="steps">
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-1.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">완성도 높은 논문 쓰기</h3>
+                  <p class="step__text">AI 어시스턴트와 함께라면 학술 텍스트를 흠잡을 데 없이 완성할 수 있습니다.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-2.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">효율적인 공동 작업</h3>
+                  <p class="step__text">스마트한 AI 지원으로 더 빠르고 효과적으로 쓸 수 있습니다.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-3.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">꼼꼼한 피드백</h3>
+                  <p class="step__text">AI 에디터가 유용한 팁과 조언을 제공합니다.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-4.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">아이디어와 영감</h3>
+                  <p class="step__text">AI 봇과 대화하며 새로운 아이디어와 접근법을 발견할 수 있습니다.</p>
+                </div>
+              </li>
+            </ol>
+
+            <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+              무료로 체험하기
+              <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+
+          <ul class="cards">
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-1.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">바로 쓸 수 있는 출처</h3>
+              <p class="card__text">검색은 이제 그만! AI가 최적의 출처를 찾아 인용 형식까지 자동으로 정리합니다</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-2.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">자연스러운 문장</h3>
+              <p class="card__text">AI 판별기를 통과하고 사람이 쓴 것처럼 읽히는 텍스트를 만듭니다</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-3.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">실질적인 도움</h3>
+              <p class="card__text">글쓰기 모든 단계에서 AI 봇이 자세한 도움을 드립니다</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center reveal">고객들은 Stylus AI를 사랑합니다</h2>
+
+        <div class="slider reveal" data-slider role="region" aria-roledescription="carousel" aria-label="고객 후기">
+          <div class="slider__viewport">
+            <ul class="slider__track" data-slider-track>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="1 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-4.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>AI 글이라 큰 기대는 안 했는데 자료 조사도 탄탄하고 문체도 세련됐어요. 처음부터 끝까지 매끄럽고 편했어요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Nathan</cite><span class="review__date">10 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="2 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-9.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>생각나는 대로 요청만 적으면 이 도구가 매끄럽고 설득력 있는 글로 만들어 줘요. 앞으로 모든 과제는 여기로 갈 것 같아요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Aria</cite><span class="review__date">7 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="3 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-2.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>짧은 논증 에세이든 긴 논문이든 결과물이 늘 학술적으로 믿을 만해요. 글쓰기 판도를 바꾼 도구예요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Mason</cite><span class="review__date">11 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="4 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-8.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Stylus 덕분에 글쓰는 시간이 훨씬 즐겁고 효율적이 됐어요. AI 글이 이렇게 통찰력 있고 정리도 잘 되고 사람마다 맞춰질 수 있다니 몰랐어요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Isabella</cite><span class="review__date">30 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="5 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-5.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>예전에 ‘에세이 써 주는 AI’를 검색했을 때만 해도 이렇게 잘 나올 줄 몰랐어요. 지금은 늘 쓰는 도구이고, 마감도 항상 지킬 수 있게 해 줘요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Leo</cite><span class="review__date">6 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="6 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-10.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>이 AI 에세이 로봇은 어떤 사람들보다 저를 더 잘 알아요, 진짜로. 글도 잘 쓰는 친구가 24시간 옆에 있는 느낌이에요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Rebecca</cite><span class="review__date">28 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="7 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-1.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>AI가 이렇게 정확하고 창의적으로 에세이를 써 주는 사이트가 있다는 게 신기하고 좋았어요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">James</cite><span class="review__date">10 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="8 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>에세이 완성도가 정말 좋아요. 내 전용 글쓰기 도우미가 생긴 기분이에요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Sophia</cite><span class="review__date">22 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="9 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-7.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>처음엔 반신반의했는데 에세이 쓰기엔 여기가 최고예요. 글이 논리적이고 구조도 잘 잡혀 있고 통찰력도 대단해요!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Samantha</cite><span class="review__date">27 November</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="10 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-3.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>이 자동 에세이 작성기 덕분에 과제하는 방식이 완전히 바뀌었어요. 간편하고 믿을 만한 게 제일 좋아요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Oliver</cite><span class="review__date">17 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="11 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-11.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>문학을 전공하는 학생이라 좋은 AI 에세이 작성기가 꼭 필요했어요. 받은 글이 기대 이상이었고, 정확하고 세련됐어요!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Miranda</cite><span class="review__date">5 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="12 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>이 AI 에세이 봇을 쓰면서 제 글쓰기가 확실히 달라졌어요. 빠르고 효율적이고, 결과물은 늘 최고예요.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Emily</cite><span class="review__date">23 September</span></footer>
+                </article>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="slider__controls">
+            <button class="slider__arrow" type="button" data-slider-prev aria-label="이전 후기">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-l"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots role="group" aria-label="후기 페이지 선택" data-label="후기 페이지 {n} 보기"></div>
+            <button class="slider__arrow" type="button" data-slider-next aria-label="다음 후기">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-r"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="ratings reveal">
+          <li class="rating">
+            <img src="../assets/img/rating-1.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">평균 평점 4.9점 (5점 만점)</span>
+          </li>
+          <li class="rating">
+            <img src="../assets/img/rating-2.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">평균 평점 4.9점 (5점 만점)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center team__title reveal">Stylus AI는 미국 대학 졸업생 팀이 만들었습니다</h2>
+
+        <div class="team">
+          <div class="team__col">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI 보안 분석가</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">컴퓨터 비전 엔지니어</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">빅데이터 과학자</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">딥러닝 엔지니어</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">데이터 과학자</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI 보안 분석가</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">컴퓨터 비전 엔지니어</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">빅데이터 과학자</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">딥러닝 엔지니어</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">데이터 과학자</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="team__col team__col--reverse">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">빅데이터 과학자</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">데이터 과학자</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">컴퓨터 비전 엔지니어</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">딥러닝 엔지니어</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI 보안 분석가</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">빅데이터 과학자</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">데이터 과학자</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">컴퓨터 비전 엔지니어</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">딥러닝 엔지니어</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI 보안 분석가</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="team__outro">
+          <p class="team__goal reveal">저희 목표는 학위 과정을 밟는 학생들을 AI로 돕는 것입니다. 예산이 빠듯한 학생도 함께 쓸 수 있도록 에세이 작성기 안에 무료 기능을 두었습니다.</p>
+
+          <div class="unis reveal" role="group" aria-label="우리 팀이 졸업한 대학">
+            <img src="../assets/img/uni-1.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-2.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-3.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-4.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-5.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-6.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+          </div>
+
+          <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+            AI 공동 작성자 체험하기
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__brand" href="#top" aria-label="Stylus AI — 홈으로">
+        <img src="../assets/img/logo-mark.svg" width="56" height="56" alt="Stylus AI">
+      </a>
+      <nav class="footer__nav" aria-label="푸터 내비게이션">
+        <ul>
+          <li><a href="https://mystylus.ai/about-us/">회사 소개</a></li>
+          <li><a href="#how-it-works">이용 방법</a></li>
+          <li><a href="#reviews">후기</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__mid">
+      <ul class="footer__pay" aria-label="사용 가능한 결제 수단">
+        <li><img src="../assets/img/pay-1.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-2.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-3.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-4.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-5.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-6.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="X의 Stylus AI"><img src="../assets/img/social-x.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.instagram.com/mystylus.ai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram의 Stylus AI"><img src="../assets/img/social-instagram.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.facebook.com/aistylus/" target="_blank" rel="noopener noreferrer" aria-label="Facebook의 Stylus AI"><img src="../assets/img/social-facebook.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord의 Stylus AI"><img src="../assets/img/social-discord.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer__contact">
+      <p class="footer__contacts">
+        <a href="tel:+18882704473">+1 888 270 4473</a>
+        <span class="footer__dot" aria-hidden="true"></span>
+        <a href="mailto:support@mystylus.ai">support@mystylus.ai</a>
+      </p>
+      <p class="footer__address">Panimpex Ltd, 25 Martiou, 27, D. Michael Tower, office 105A, Egkomi, 2408, Nicosia, Cyprus</p>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span data-year>2024</span> Stylus. 모든 권리 보유.</p>
+      <ul class="footer__legal">
+        <li><a href="https://mystylus.ai/terms-conditions/">서비스 이용약관</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/privacy-policy/">쿠키 및 개인정보 처리방침</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/essay-title-generator/">에세이 제목 생성기</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

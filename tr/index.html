@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stylus AI — Araştırma makaleni hızlı, kolay ve kişiye özel yaz</title>
+<meta name="description" content="Stylus AI araştırma makalelerini ve denemelerini daha hızlı yazmana yardım eder. Yapay zekânın bulduğu kaynaklar ve otomatik alıntılar, yapay zekâ dedektörlerini geçen doğal metinler ve her adımda gerçek rehberlik. Ücretsiz yazmaya başla.">
+<meta name="theme-color" content="#f4f8fb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stylus AI — Araştırma makaleni hızlı, kolay ve kişiye özel yaz">
+<meta property="og:description" content="Yapay zekânın bulduğu kaynaklar, yapay zekâ dedektörlerini geçen doğal metinler ve yazma sürecinin her adımında gerçek rehberlik.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="id_ID">
+<link rel="alternate" hreflang="en" href="/">
+<link rel="alternate" hreflang="pl" href="/pl/">
+<link rel="alternate" hreflang="ru" href="/ru/">
+<link rel="alternate" hreflang="zh" href="/zh/">
+<link rel="alternate" hreflang="es" href="/es/">
+<link rel="alternate" hreflang="hi" href="/hi/">
+<link rel="alternate" hreflang="pt" href="/pt/">
+<link rel="alternate" hreflang="bn" href="/bn/">
+<link rel="alternate" hreflang="fr" href="/fr/">
+<link rel="alternate" hreflang="de" href="/de/">
+<link rel="alternate" hreflang="ja" href="/ja/">
+<link rel="alternate" hreflang="ar" href="/ar/">
+<link rel="alternate" hreflang="ko" href="/ko/">
+<link rel="alternate" hreflang="it" href="/it/">
+<link rel="alternate" hreflang="tr" href="/tr/">
+<link rel="alternate" hreflang="id" href="/id/">
+<link rel="alternate" hreflang="x-default" href="/">
+<!-- Before publishing add absolute og:url + og:image (1200x630) and a canonical link for the real production domain. -->
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Stylus AI">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../assets/fonts/Stolzl-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../assets/fonts/Stolzl-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="../assets/img/hero-app.webp"
+      imagesrcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+      imagesizes="(max-width: 900px) 92vw, 48vw">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none">
+    <path d="M4.5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M12.4 5.7 18.7 12l-6.3 6.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none">
+    <path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none">
+    <path d="M9.5 5.5 16 12l-6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none">
+    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none">
+    <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar" aria-label="Ana gezinme">
+      <a class="navbar__brand" href="#top" aria-label="Stylus AI — ana sayfa">
+        <img src="../assets/img/logo.png" width="256" height="256" alt="Stylus AI">
+      </a>
+
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span class="sr-only">Menü</span>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--open" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--close" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <div class="navbar__menu" id="nav-menu" data-nav-menu>
+        <details class="nav-picker">
+          <summary class="nav-picker__summary">Menü<span class="nav-picker__caret" aria-hidden="true"></span></summary>
+          <ul class="navbar__links nav-picker__list">
+            <li><a href="#how-it-works">Nasıl çalışır</a></li>
+            <li><a href="#reviews">Yorumlar</a></li>
+          </ul>
+        </details>
+        <div class="navbar__actions">
+          <div class="lang-switch" role="group" aria-label="Dil">
+            <details class="lang-picker">
+              <summary class="lang lang--current" aria-current="true" lang="tr">TR<span class="lang-picker__caret" aria-hidden="true"></span></summary>
+              <ul class="lang-picker__list">
+                <li><a class="lang" href="/" hreflang="en" lang="en" aria-label="Dil: English">EN</a></li>
+                <li><a class="lang" href="/pl/" hreflang="pl" lang="pl" aria-label="Dil: Polski">PL</a></li>
+                <li><a class="lang" href="/ru/" hreflang="ru" lang="ru" aria-label="Dil: Русский">RU</a></li>
+                <li><a class="lang" href="/zh/" hreflang="zh" lang="zh" aria-label="Dil: 中文（简体）">ZH</a></li>
+                <li><a class="lang" href="/es/" hreflang="es" lang="es" aria-label="Dil: Español">ES</a></li>
+                <li><a class="lang" href="/hi/" hreflang="hi" lang="hi" aria-label="Dil: हिन्दी">HI</a></li>
+                <li><a class="lang" href="/pt/" hreflang="pt" lang="pt" aria-label="Dil: Português (BR)">PT</a></li>
+                <li><a class="lang" href="/bn/" hreflang="bn" lang="bn" aria-label="Dil: বাংলা">BN</a></li>
+                <li><a class="lang" href="/fr/" hreflang="fr" lang="fr" aria-label="Dil: Français">FR</a></li>
+                <li><a class="lang" href="/de/" hreflang="de" lang="de" aria-label="Dil: Deutsch">DE</a></li>
+                <li><a class="lang" href="/ja/" hreflang="ja" lang="ja" aria-label="Dil: 日本語">JA</a></li>
+                <li><a class="lang" href="/ar/" hreflang="ar" lang="ar" aria-label="Dil: العربية">AR</a></li>
+                <li><a class="lang" href="/ko/" hreflang="ko" lang="ko" aria-label="Dil: 한국어">KO</a></li>
+                <li><a class="lang" href="/it/" hreflang="it" lang="it" aria-label="Dil: Italiano">IT</a></li>
+                <li><a class="lang" href="/id/" hreflang="id" lang="id" aria-label="Dil: Bahasa Indonesia">ID</a></li>
+              </ul>
+            </details>
+          </div>
+          <a class="btn btn--ghost" href="https://mystylus.ai/login/">Giriş yap</a>
+          <a class="btn btn--primary" href="https://mystylus.ai/onboarding/">
+            Dene
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <h1 class="hero__title">Stylus AI ile araştırma makaleni hızlı, kolay ve kişiye özel yaz</h1>
+        <p class="hero__subtitle">Tüm metinler her intihal kontrolünü geçer ve yapay zekâ dedektörlerine yakalanmaz.</p>
+        <a class="btn btn--primary btn--lg" href="https://mystylus.ai/onboarding/">
+          Yazmaya başla
+          <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <div class="hero__media reveal">
+        <img src="../assets/img/hero-app.webp"
+             srcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+             sizes="(max-width: 900px) 92vw, 48vw"
+             width="1376" height="1280" fetchpriority="high" decoding="async"
+             alt="Stylus AI editöründe bir araştırma makalesi taslağı, yapay zekânın oluşturduğu paragraflar ve önerilen kaynaklar.">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="panel">
+        <div class="how">
+          <div class="how__intro">
+            <h2 class="h2 reveal">Yapay zekâ ile deneme yazımını güçlendir</h2>
+
+            <ol class="steps">
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-1.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">Kusursuz makaleler</h3>
+                  <p class="step__text">Yapay zekâ asistanıyla akademik metinlerin kusursuz olur.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-2.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">Üretken iş birliği</h3>
+                  <p class="step__text">Akıllı yapay zekâ desteğiyle verimli ve etkili yaz.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-3.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">Ayrıntılı geri bildirim</h3>
+                  <p class="step__text">Yapay zekâ editöründen değerli ipuçları ve öneriler al.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-4.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">İçgörü ve ilham</h3>
+                  <p class="step__text">Yapay zekâ botuyla konuşarak yeni fikirler ve yaklaşımlar keşfet.</p>
+                </div>
+              </li>
+            </ol>
+
+            <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+              Ücretsiz dene
+              <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+
+          <ul class="cards">
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-1.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">Hazır Kaynaklar</h3>
+              <p class="card__text">Aramayı unut! Yapay zekâmız en iyi kaynakları bulur ve alıntıları otomatik biçimlendirir</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-2.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">Doğal Metin</h3>
+              <p class="card__text">Aracımız yapay zekâ dedektörlerini atlatır ve insan yazısı gibi görünen metinler üretir</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-3.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">Gerçek Rehberlik</h3>
+              <p class="card__text">Yazma sürecinin her adımında yapay zekâ botumuzdan ayrıntılı yardım al</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center reveal">Müşterilerimiz bizi seviyor</h2>
+
+        <div class="slider reveal" data-slider role="region" aria-roledescription="carousel" aria-label="Müşteri yorumları">
+          <div class="slider__viewport">
+            <ul class="slider__track" data-slider-track>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="1 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-4.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Yapay zekâ metinlerinden pek bir şey beklemiyordum ama bu hem iyi araştırılmış hem de üslubu çok sağlam. Süreç de bir o kadar akıcı ve hızlı.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Nathan</cite><span class="review__date">10 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="2 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-9.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Düşüncelerimi ve isteklerimi yazıyorum, bu araç onları tutarlı ve etkileyici metinlere çeviriyor. Bundan sonra tüm yazı işlerimde ilk tercihim olacak, kesin.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Aria</cite><span class="review__date">7 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="3 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-2.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Kısa bir tartışma denemesi de olsa kapsamlı bir araştırma makalesi de, sonuç her zaman akademik olarak inandırıcı. Yazı dünyasında gerçek bir devrim.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Mason</cite><span class="review__date">11 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="4 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-8.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Stylus yazma sürecimi kesinlikle daha keyifli ve verimli hale getirdi. Yapay zekâ metinlerinin bu kadar derinlikli, düzenli ve kişiye özel olabileceğini hiç düşünmemiştim.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Isabella</cite><span class="review__date">30 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="5 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-5.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>“benim için deneme yazan yapay zekâ” diye ararken böyle harika bir sonuç beklemiyordum. Artık en çok kullandığım araç, teslim tarihlerine hep yetişmemi sağlıyor.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Leo</cite><span class="review__date">6 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="6 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-10.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Bu yapay zekâ deneme yazarı beni bazı insanlardan daha iyi anlıyor, inanın. Sanki 7/24 yanında olan, üstelik profesyonel bir yazar arkadaşın var.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Rebecca</cite><span class="review__date">28 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="7 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-1.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Yapay zekânın denemeleri bu kadar isabetli ve yaratıcı yazdığı bir site bulmak şaşırtıcıydı, ama harikaydı.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">James</cite><span class="review__date">10 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="8 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Denemelerin kalitesi gerçekten çok iyi. Sanki kişisel bir yazma asistanım var.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Sophia</cite><span class="review__date">22 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="9 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-7.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Önce şüpheliydim ama deneme yazmak için en iyi yapay zekâ sitesi bu. Metinler tutarlı, düzenli ve son derece derinlikli!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Samantha</cite><span class="review__date">27 November</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="10 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-3.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Bu otomatik deneme yazarı ödevlerimi yapma şeklimi değiştirdi. Kolaylığını ve güvenilirliğini seviyorum.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Oliver</cite><span class="review__date">17 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="11 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-11.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Edebiyat öğrencisi olarak iyi bir yapay zekâ deneme yazarı benim için çok önemliydi. Aldığım makale beklentimin üzerindeydi, hem çok isabetli hem çok özenli!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Miranda</cite><span class="review__date">5 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="12 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Bu yapay zekâ botuyla deneme yazmak yazma performansımı ciddi şekilde yükseltti. Hızlı, verimli ve denemeler her zaman çok iyi.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Emily</cite><span class="review__date">23 September</span></footer>
+                </article>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="slider__controls">
+            <button class="slider__arrow" type="button" data-slider-prev aria-label="Önceki yorumlar">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-l"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots role="group" aria-label="Yorum sayfası seç" data-label="{n}. yorum sayfasını göster"></div>
+            <button class="slider__arrow" type="button" data-slider-next aria-label="Sonraki yorumlar">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-r"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="ratings reveal">
+          <li class="rating">
+            <img src="../assets/img/rating-1.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">Ortalama puan 5 üzerinden 4,9</span>
+          </li>
+          <li class="rating">
+            <img src="../assets/img/rating-2.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">Ortalama puan 5 üzerinden 4,9</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center team__title reveal">Stylus, yeni nesil öğrencilere destek olmak için ABD mezunu bir ekip tarafından kuruldu</h2>
+
+        <div class="team">
+          <div class="team__col">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Yapay Zekâ Güvenlik Analisti</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Bilgisayarlı Görü Mühendisi</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Büyük Veri Bilimcisi</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Derin Öğrenme Mühendisi</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Veri Bilimcisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Yapay Zekâ Güvenlik Analisti</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Bilgisayarlı Görü Mühendisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Büyük Veri Bilimcisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Derin Öğrenme Mühendisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Veri Bilimcisi</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="team__col team__col--reverse">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Büyük Veri Bilimcisi</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Veri Bilimcisi</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Bilgisayarlı Görü Mühendisi</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Derin Öğrenme Mühendisi</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Yapay Zekâ Güvenlik Analisti</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Büyük Veri Bilimcisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Veri Bilimcisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Bilgisayarlı Görü Mühendisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Derin Öğrenme Mühendisi</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Yapay Zekâ Güvenlik Analisti</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="team__outro">
+          <p class="team__goal reveal">Amacımız, diploma peşindeki öğrencilere yapay zekâ destekli yardım sunmak. Kısıtlı bütçeli öğrencilere eşlik etsin diye yapay zekâ deneme oluşturucumuzda ücretsiz seçenekler de sunuyoruz.</p>
+
+          <div class="unis reveal" role="group" aria-label="Ekibimizin mezun olduğu üniversiteler">
+            <img src="../assets/img/uni-1.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-2.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-3.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-4.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-5.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-6.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+          </div>
+
+          <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+            Yapay zekâ ortak yazarı dene
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__brand" href="#top" aria-label="Stylus AI — ana sayfa">
+        <img src="../assets/img/logo-mark.svg" width="56" height="56" alt="Stylus AI">
+      </a>
+      <nav class="footer__nav" aria-label="Alt bilgi gezinmesi">
+        <ul>
+          <li><a href="https://mystylus.ai/about-us/">Hakkımızda</a></li>
+          <li><a href="#how-it-works">Nasıl çalışır</a></li>
+          <li><a href="#reviews">Yorumlar</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__mid">
+      <ul class="footer__pay" aria-label="Kabul edilen ödeme yöntemleri">
+        <li><img src="../assets/img/pay-1.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-2.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-3.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-4.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-5.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-6.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI X'te"><img src="../assets/img/social-x.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.instagram.com/mystylus.ai/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI Instagram'da"><img src="../assets/img/social-instagram.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.facebook.com/aistylus/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI Facebook'ta"><img src="../assets/img/social-facebook.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI Discord'da"><img src="../assets/img/social-discord.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer__contact">
+      <p class="footer__contacts">
+        <a href="tel:+18882704473">+1 888 270 4473</a>
+        <span class="footer__dot" aria-hidden="true"></span>
+        <a href="mailto:support@mystylus.ai">support@mystylus.ai</a>
+      </p>
+      <p class="footer__address">Panimpex Ltd, 25 Martiou, 27, D. Michael Tower, office 105A, Egkomi, 2408, Nicosia, Cyprus</p>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span data-year>2024</span> Stylus Tüm Hakları Saklıdır</p>
+      <ul class="footer__legal">
+        <li><a href="https://mystylus.ai/terms-conditions/">Hizmet koşulları</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/privacy-policy/">Çerez ve gizlilik politikası</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/essay-title-generator/">Deneme Başlığı Oluşturucu</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

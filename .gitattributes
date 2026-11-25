@@ -1,0 +1,12 @@
+# Normalise line endings — the site is byte-verified on disk (check.mjs asserts
+# exact byte counts), so keep LF everywhere instead of CRLF on checkout.
+* text=auto eol=lf
+
+# Fonts and raster assets must stay untouched
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary

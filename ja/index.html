@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stylus AI — 論文を速く、簡単に、自分らしく</title>
+<meta name="description" content="Stylus AIなら論文やエッセイをより速く書けます。AIが出典を見つけて引用の書式まで自動で整え、自然な文章はAI検出ツールにも引っかかりません。書く手順の各段階で実際に役立つサポートも受けられます。無料で始められます。">
+<meta name="theme-color" content="#f4f8fb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stylus AI — 論文を速く、簡単に、自分らしく">
+<meta property="og:description" content="AIが出典を見つけ、自然な文章はAI検出ツールを通り抜け、書く手順の各段階で実際のサポートが得られます。">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="id_ID">
+<link rel="alternate" hreflang="en" href="/">
+<link rel="alternate" hreflang="pl" href="/pl/">
+<link rel="alternate" hreflang="ru" href="/ru/">
+<link rel="alternate" hreflang="zh" href="/zh/">
+<link rel="alternate" hreflang="es" href="/es/">
+<link rel="alternate" hreflang="hi" href="/hi/">
+<link rel="alternate" hreflang="pt" href="/pt/">
+<link rel="alternate" hreflang="bn" href="/bn/">
+<link rel="alternate" hreflang="fr" href="/fr/">
+<link rel="alternate" hreflang="de" href="/de/">
+<link rel="alternate" hreflang="ja" href="/ja/">
+<link rel="alternate" hreflang="ar" href="/ar/">
+<link rel="alternate" hreflang="ko" href="/ko/">
+<link rel="alternate" hreflang="it" href="/it/">
+<link rel="alternate" hreflang="tr" href="/tr/">
+<link rel="alternate" hreflang="id" href="/id/">
+<link rel="alternate" hreflang="x-default" href="/">
+<!-- Before publishing add absolute og:url + og:image (1200x630) and a canonical link for the real production domain. -->
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Stylus AI">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../assets/fonts/Stolzl-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../assets/fonts/Stolzl-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="../assets/img/hero-app.webp"
+      imagesrcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+      imagesizes="(max-width: 900px) 92vw, 48vw">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none">
+    <path d="M4.5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M12.4 5.7 18.7 12l-6.3 6.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none">
+    <path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none">
+    <path d="M9.5 5.5 16 12l-6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none">
+    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none">
+    <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar" aria-label="メインナビゲーション">
+      <a class="navbar__brand" href="#top" aria-label="Stylus AI — ホーム">
+        <img src="../assets/img/logo.png" width="256" height="256" alt="Stylus AI">
+      </a>
+
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span class="sr-only">メニュー</span>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--open" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--close" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <div class="navbar__menu" id="nav-menu" data-nav-menu>
+        <details class="nav-picker">
+          <summary class="nav-picker__summary">メニュー<span class="nav-picker__caret" aria-hidden="true"></span></summary>
+          <ul class="navbar__links nav-picker__list">
+            <li><a href="#how-it-works">使い方</a></li>
+            <li><a href="#reviews">レビュー</a></li>
+          </ul>
+        </details>
+        <div class="navbar__actions">
+          <div class="lang-switch" role="group" aria-label="言語">
+            <details class="lang-picker">
+              <summary class="lang lang--current" aria-current="true" lang="ja">JA<span class="lang-picker__caret" aria-hidden="true"></span></summary>
+              <ul class="lang-picker__list">
+                <li><a class="lang" href="/" hreflang="en" lang="en" aria-label="言語: English">EN</a></li>
+                <li><a class="lang" href="/pl/" hreflang="pl" lang="pl" aria-label="言語: Polski">PL</a></li>
+                <li><a class="lang" href="/ru/" hreflang="ru" lang="ru" aria-label="言語: Русский">RU</a></li>
+                <li><a class="lang" href="/zh/" hreflang="zh" lang="zh" aria-label="言語: 中文（简体）">ZH</a></li>
+                <li><a class="lang" href="/es/" hreflang="es" lang="es" aria-label="言語: Español">ES</a></li>
+                <li><a class="lang" href="/hi/" hreflang="hi" lang="hi" aria-label="言語: हिन्दी">HI</a></li>
+                <li><a class="lang" href="/pt/" hreflang="pt" lang="pt" aria-label="言語: Português (BR)">PT</a></li>
+                <li><a class="lang" href="/bn/" hreflang="bn" lang="bn" aria-label="言語: বাংলা">BN</a></li>
+                <li><a class="lang" href="/fr/" hreflang="fr" lang="fr" aria-label="言語: Français">FR</a></li>
+                <li><a class="lang" href="/de/" hreflang="de" lang="de" aria-label="言語: Deutsch">DE</a></li>
+                <li><a class="lang" href="/ar/" hreflang="ar" lang="ar" aria-label="言語: العربية">AR</a></li>
+                <li><a class="lang" href="/ko/" hreflang="ko" lang="ko" aria-label="言語: 한국어">KO</a></li>
+                <li><a class="lang" href="/it/" hreflang="it" lang="it" aria-label="言語: Italiano">IT</a></li>
+                <li><a class="lang" href="/tr/" hreflang="tr" lang="tr" aria-label="言語: Türkçe">TR</a></li>
+                <li><a class="lang" href="/id/" hreflang="id" lang="id" aria-label="言語: Bahasa Indonesia">ID</a></li>
+              </ul>
+            </details>
+          </div>
+          <a class="btn btn--ghost" href="https://mystylus.ai/login/">ログイン</a>
+          <a class="btn btn--primary" href="https://mystylus.ai/onboarding/">
+            試してみる
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <h1 class="hero__title">Stylus AIで論文を速く簡単に、自分らしく</h1>
+        <p class="hero__subtitle">どの文章も盗用チェックを通過し、AI検出にも引っかかりません。</p>
+        <a class="btn btn--primary btn--lg" href="https://mystylus.ai/onboarding/">
+          書き始める
+          <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <div class="hero__media reveal">
+        <img src="../assets/img/hero-app.webp"
+             srcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+             sizes="(max-width: 900px) 92vw, 48vw"
+             width="1376" height="1280" fetchpriority="high" decoding="async"
+             alt="Stylus AIのエディタ画面。論文の構成案の横に、AIが生成した段落と提案された出典が並んでいます。">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="panel">
+        <div class="how">
+          <div class="how__intro">
+            <h2 class="h2 reveal">AIでもっと良いエッセイを書く</h2>
+
+            <ol class="steps">
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-1.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">質の高い論文をつくる</h3>
+                  <p class="step__text">AIアシスタントがいれば、学術的な文章はすきのない仕上がりになります。</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-2.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">生産的な共同作業</h3>
+                  <p class="step__text">賢いAIサポートで、効率よく書き進められます。</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-3.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">細やかなフィードバック</h3>
+                  <p class="step__text">AIエディターから有益なヒントとアドバイスが届きます。</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-4.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">ひらめきと発想</h3>
+                  <p class="step__text">AIボットとの対話から新しいアイデアや視点が見つかります。</p>
+                </div>
+              </li>
+            </ol>
+
+            <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+              無料で試す
+              <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+
+          <ul class="cards">
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-1.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">すぐ使える出典</h3>
+              <p class="card__text">検索はもう不要です。AIが最適な出典を見つけ、引用の書式まで自動で整えます。</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-2.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">自然な文章</h3>
+              <p class="card__text">AI検出ツールを回避し、人が書いたような文章を生成します。</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-3.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">本物のサポート</h3>
+              <p class="card__text">書く手順の各段階で、AIボットが詳しくサポートします。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center reveal">お客様に愛用されています</h2>
+
+        <div class="slider reveal" data-slider role="region" aria-roledescription="carousel" aria-label="お客様のレビュー">
+          <div class="slider__viewport">
+            <ul class="slider__track" data-slider-track>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="1 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-4.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>AIの文章にはあまり期待していませんでしたが、よく調べられていて文体も洗練されています。ここまで自然で快適に使えるとは思いませんでした。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Nathan</cite><span class="review__date">10 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="2 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-9.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>自分の考えや要望を打ち込むだけで、このAIツールが筋の通った説得力のある文章に仕上げてくれます。これからは文章仕事はこれ一本で決まりです。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Aria</cite><span class="review__date">7 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="3 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-2.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>短い論証エッセイでも長い論文でも、結果はいつも学術的に信頼できます。文章を書く世界の常識が変わりましたね。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Mason</cite><span class="review__date">11 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="4 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-8.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Stylusのおかげで、書くことがずっと楽しく効率的になりました。AIの文章がここまで中身があって、整理されていて、自分に合わせてくれるとは思いませんでした。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Isabella</cite><span class="review__date">30 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="5 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-5.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>「エッセイを書いてくれるAI」で検索していたときは、こんなにすごい結果になるとは思っていませんでした。今では手放せないツールで、締め切りに間に合うのをいつも助けてくれます。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Leo</cite><span class="review__date">6 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="6 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-10.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>このAIエッセイロボット、正直まわりの誰よりも私のことを分かってくれる感じ。プロのライターでもある友達が24時間そばにいるみたい。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Rebecca</cite><span class="review__date">28 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="7 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-1.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>こんなに正確で創造的なエッセイを書くAIサイトがあるなんて、予想外でしたし、本当に驚きました。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">James</cite><span class="review__date">10 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="8 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>エッセイの質がとにかくすごい。自分の専属ライターがついたみたいな感覚です。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Sophia</cite><span class="review__date">22 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="9 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-7.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>最初は半信半疑でしたが、エッセイを書くならこのAIサイトが最高です。文章は筋が通っていて、構成もよく、内容もとても深い！</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Samantha</cite><span class="review__date">27 November</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="10 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-3.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>この自動エッセイライターのおかげで、課題の進め方が変わりました。手軽さと信頼感が気に入っています。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Oliver</cite><span class="review__date">17 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="11 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-11.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>文学を専攻している私にとって、良いAIエッセイライターは本当に重要でした。届いた論文は期待以上で、正確で洗練されていました！</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Miranda</cite><span class="review__date">5 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="12 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>このAIエッセイライターを使い始めてから、書く力がぐっと上がりました。速くて効率的で、エッセイはいつも一級品です。</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Emily</cite><span class="review__date">23 September</span></footer>
+                </article>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="slider__controls">
+            <button class="slider__arrow" type="button" data-slider-prev aria-label="前のレビュー">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-l"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots role="group" aria-label="レビューページを選択" data-label="レビューページ{n}を表示"></div>
+            <button class="slider__arrow" type="button" data-slider-next aria-label="次のレビュー">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-r"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="ratings reveal">
+          <li class="rating">
+            <img src="../assets/img/rating-1.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">平均評価は5点満点中4.9</span>
+          </li>
+          <li class="rating">
+            <img src="../assets/img/rating-2.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">平均評価は5点満点中4.9</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center team__title reveal">Stylusは米国大卒のチームが、次世代の学生のために作りました。</h2>
+
+        <div class="team">
+          <div class="team__col">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AIセキュリティアナリスト</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">コンピュータビジョンエンジニア</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">ビッグデータサイエンティスト</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">深層学習エンジニア</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">データサイエンティスト</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AIセキュリティアナリスト</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">コンピュータビジョンエンジニア</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">ビッグデータサイエンティスト</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">深層学習エンジニア</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">データサイエンティスト</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="team__col team__col--reverse">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">ビッグデータサイエンティスト</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">データサイエンティスト</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">コンピュータビジョンエンジニア</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">深層学習エンジニア</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AIセキュリティアナリスト</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">ビッグデータサイエンティスト</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">データサイエンティスト</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">コンピュータビジョンエンジニア</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">深層学習エンジニア</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AIセキュリティアナリスト</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="team__outro">
+          <p class="team__goal reveal">私たちは、学位取得を目指す学生の学びをAIで支えることを目標にしています。予算が限られた学生と一緒に書けるよう、AIエッセイビルダーには無料で使える機能も用意しています。</p>
+
+          <div class="unis reveal" role="group" aria-label="チームの出身大学">
+            <img src="../assets/img/uni-1.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-2.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-3.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-4.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-5.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-6.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+          </div>
+
+          <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+            AI共著者を今すぐ試す
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__brand" href="#top" aria-label="Stylus AI — ホーム">
+        <img src="../assets/img/logo-mark.svg" width="56" height="56" alt="Stylus AI">
+      </a>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <ul>
+          <li><a href="https://mystylus.ai/about-us/">私たちについて</a></li>
+          <li><a href="#how-it-works">使い方</a></li>
+          <li><a href="#reviews">レビュー</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__mid">
+      <ul class="footer__pay" aria-label="利用できる支払い方法">
+        <li><img src="../assets/img/pay-1.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-2.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-3.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-4.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-5.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-6.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AIのXアカウント"><img src="../assets/img/social-x.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.instagram.com/mystylus.ai/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AIのInstagramアカウント"><img src="../assets/img/social-instagram.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.facebook.com/aistylus/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AIのFacebookアカウント"><img src="../assets/img/social-facebook.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AIのDiscordアカウント"><img src="../assets/img/social-discord.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer__contact">
+      <p class="footer__contacts">
+        <a href="tel:+18882704473">+1 888 270 4473</a>
+        <span class="footer__dot" aria-hidden="true"></span>
+        <a href="mailto:support@mystylus.ai">support@mystylus.ai</a>
+      </p>
+      <p class="footer__address">Panimpex Ltd, 25 Martiou, 27, D. Michael Tower, office 105A, Egkomi, 2408, Nicosia, Cyprus</p>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span data-year>2024</span> Stylus 無断転載を禁じます</p>
+      <ul class="footer__legal">
+        <li><a href="https://mystylus.ai/terms-conditions/">利用規約</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/privacy-policy/">Cookieとプライバシーポリシー</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/essay-title-generator/">エッセイタイトルジェネレーター</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

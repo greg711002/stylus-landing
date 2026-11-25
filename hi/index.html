@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stylus AI — रिसर्च पेपर लिखें तेज़, आसान और पर्सनल</title>
+<meta name="description" content="Stylus AI आपको रिसर्च पेपर और निबंध जल्दी लिखने में मदद करता है। AI से मिले स्रोत और अपने आप बनने वाले साइटेशन, इंसानी जैसी भाषा जो AI डिटेक्टर में नहीं पकड़ी जाती, और हर कदम पर असली मार्गदर्शन। मुफ़्त में लिखना शुरू करें।">
+<meta name="theme-color" content="#f4f8fb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stylus AI — रिसर्च पेपर लिखें तेज़, आसान और पर्सनल">
+<meta property="og:description" content="AI से मिले स्रोत, इंसानी जैसी भाषा जो AI डिटेक्टर में नहीं पकड़ी जाती, और लिखने की पूरी प्रक्रिया में हर कदम पर असली मदद।">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="hi_IN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="id_ID">
+<link rel="alternate" hreflang="en" href="/">
+<link rel="alternate" hreflang="pl" href="/pl/">
+<link rel="alternate" hreflang="ru" href="/ru/">
+<link rel="alternate" hreflang="zh" href="/zh/">
+<link rel="alternate" hreflang="es" href="/es/">
+<link rel="alternate" hreflang="hi" href="/hi/">
+<link rel="alternate" hreflang="pt" href="/pt/">
+<link rel="alternate" hreflang="bn" href="/bn/">
+<link rel="alternate" hreflang="fr" href="/fr/">
+<link rel="alternate" hreflang="de" href="/de/">
+<link rel="alternate" hreflang="ja" href="/ja/">
+<link rel="alternate" hreflang="ar" href="/ar/">
+<link rel="alternate" hreflang="ko" href="/ko/">
+<link rel="alternate" hreflang="it" href="/it/">
+<link rel="alternate" hreflang="tr" href="/tr/">
+<link rel="alternate" hreflang="id" href="/id/">
+<link rel="alternate" hreflang="x-default" href="/">
+<!-- Before publishing add absolute og:url + og:image (1200x630) and a canonical link for the real production domain. -->
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Stylus AI">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../assets/fonts/Stolzl-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../assets/fonts/Stolzl-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="../assets/img/hero-app.webp"
+      imagesrcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+      imagesizes="(max-width: 900px) 92vw, 48vw">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">सामग्री पर जाएँ</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none">
+    <path d="M4.5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M12.4 5.7 18.7 12l-6.3 6.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none">
+    <path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none">
+    <path d="M9.5 5.5 16 12l-6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none">
+    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none">
+    <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar" aria-label="मुख्य नेविगेशन">
+      <a class="navbar__brand" href="#top" aria-label="Stylus AI — होम">
+        <img src="../assets/img/logo.png" width="256" height="256" alt="Stylus AI">
+      </a>
+
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span class="sr-only">मेन्यू</span>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--open" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--close" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <div class="navbar__menu" id="nav-menu" data-nav-menu>
+        <details class="nav-picker">
+          <summary class="nav-picker__summary">मेन्यू<span class="nav-picker__caret" aria-hidden="true"></span></summary>
+          <ul class="navbar__links nav-picker__list">
+            <li><a href="#how-it-works">यह कैसे काम करता है</a></li>
+            <li><a href="#reviews">रिव्यू</a></li>
+          </ul>
+        </details>
+        <div class="navbar__actions">
+          <div class="lang-switch" role="group" aria-label="भाषा">
+            <details class="lang-picker">
+              <summary class="lang lang--current" aria-current="true" lang="hi">HI<span class="lang-picker__caret" aria-hidden="true"></span></summary>
+              <ul class="lang-picker__list">
+                <li><a class="lang" href="/" hreflang="en" lang="en" aria-label="भाषा: English">EN</a></li>
+                <li><a class="lang" href="/pl/" hreflang="pl" lang="pl" aria-label="भाषा: Polski">PL</a></li>
+                <li><a class="lang" href="/ru/" hreflang="ru" lang="ru" aria-label="भाषा: Русский">RU</a></li>
+                <li><a class="lang" href="/zh/" hreflang="zh" lang="zh" aria-label="भाषा: 中文（简体）">ZH</a></li>
+                <li><a class="lang" href="/es/" hreflang="es" lang="es" aria-label="भाषा: Español">ES</a></li>
+                <li><a class="lang" href="/pt/" hreflang="pt" lang="pt" aria-label="भाषा: Português (BR)">PT</a></li>
+                <li><a class="lang" href="/bn/" hreflang="bn" lang="bn" aria-label="भाषा: বাংলা">BN</a></li>
+                <li><a class="lang" href="/fr/" hreflang="fr" lang="fr" aria-label="भाषा: Français">FR</a></li>
+                <li><a class="lang" href="/de/" hreflang="de" lang="de" aria-label="भाषा: Deutsch">DE</a></li>
+                <li><a class="lang" href="/ja/" hreflang="ja" lang="ja" aria-label="भाषा: 日本語">JA</a></li>
+                <li><a class="lang" href="/ar/" hreflang="ar" lang="ar" aria-label="भाषा: العربية">AR</a></li>
+                <li><a class="lang" href="/ko/" hreflang="ko" lang="ko" aria-label="भाषा: 한국어">KO</a></li>
+                <li><a class="lang" href="/it/" hreflang="it" lang="it" aria-label="भाषा: Italiano">IT</a></li>
+                <li><a class="lang" href="/tr/" hreflang="tr" lang="tr" aria-label="भाषा: Türkçe">TR</a></li>
+                <li><a class="lang" href="/id/" hreflang="id" lang="id" aria-label="भाषा: Bahasa Indonesia">ID</a></li>
+              </ul>
+            </details>
+          </div>
+          <a class="btn btn--ghost" href="https://mystylus.ai/login/">लॉग इन</a>
+          <a class="btn btn--primary" href="https://mystylus.ai/onboarding/">
+            आज़माएँ
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <h1 class="hero__title">Stylus AI से रिसर्च पेपर बनाएँ तेज़, आसान और पर्सनल</h1>
+        <p class="hero__subtitle">सभी टेक्स्ट किसी भी प्लेगियरिज़्म चेक में पास होते हैं और सिस्टम उन्हें पकड़ नहीं पाता।</p>
+        <a class="btn btn--primary btn--lg" href="https://mystylus.ai/onboarding/">
+          लिखना शुरू करें
+          <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <div class="hero__media reveal">
+        <img src="../assets/img/hero-app.webp"
+             srcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+             sizes="(max-width: 900px) 92vw, 48vw"
+             width="1376" height="1280" fetchpriority="high" decoding="async"
+             alt="Stylus AI एडिटर में रिसर्च पेपर की रूपरेखा, साथ में AI से बने पैराग्राफ़ और सुझाए गए स्रोत।">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="panel">
+        <div class="how">
+          <div class="how__intro">
+            <h2 class="h2 reveal">निबंध लिखने में सुधार के लिए AI का इस्तेमाल करें</h2>
+
+            <ol class="steps">
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-1.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">बेहतरीन पेपर बनाएँ</h3>
+                  <p class="step__text">AI असिस्टेंट के साथ आपके अकादमिक टेक्स्ट बेदाग़ रहेंगे।</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-2.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">काम में तेज़ सहयोग</h3>
+                  <p class="step__text">स्मार्ट AI सपोर्ट के साथ तेज़ और असरदार तरीके से लिखें।</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-3.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">विस्तृत फ़ीडबैक</h3>
+                  <p class="step__text">AI एडिटर से काम के सुझाव और राय पाएँ।</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-4.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">गहरी समझ और प्रेरणा</h3>
+                  <p class="step__text">AI बॉट से बात करके नए आइडिया और तरीके खोजें।</p>
+                </div>
+              </li>
+            </ol>
+
+            <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+              मुफ़्त में आज़माएँ
+              <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+
+          <ul class="cards">
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-1.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">तैयार स्रोत</h3>
+              <p class="card__text">खोजबीन भूल जाएँ! हमारा AI बेहतरीन स्रोत ढूँढता है और साइटेशन अपने आप सही फ़ॉर्मैट में लगाता है</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-2.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">इंसानी जैसा टेक्स्ट</h3>
+              <p class="card__text">हमारा AI डिटेक्टर को चकमा देता है और ऐसा टेक्स्ट बनाता है जो इंसान के लिखे जैसा लगता है</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-3.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">असली मार्गदर्शन</h3>
+              <p class="card__text">हमारे AI बॉट के साथ लिखने की पूरी प्रक्रिया में हर कदम पर विस्तृत मदद पाएँ</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center reveal">हमारे क्लाइंट्स हमें पसंद करते हैं</h2>
+
+        <div class="slider reveal" data-slider role="region" aria-roledescription="carousel" aria-label="क्लाइंट रिव्यू">
+          <div class="slider__viewport">
+            <ul class="slider__track" data-slider-track>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="1 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-4.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>AI से बने कंटेंट से ज़्यादा उम्मीद नहीं थी, लेकिन यह अच्छी तरह रिसर्च किया हुआ और स्टाइल में भी शानदार है। काम बिल्कुल सहज और तेज़ हो जाता है।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Nathan</cite><span class="review__date">10 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="2 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-9.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>मैं बस अपने विचार और ज़रूरतें टाइप करता हूँ, और यह AI टूल उन्हें साफ़-सुथरे और दमदार टेक्स्ट में बदल देता है। अब हर लेखन काम के लिए यही मेरा पहला विकल्प है।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Aria</cite><span class="review__date">7 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="3 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-2.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>छोटा तर्क-आधारित निबंध हो या लंबा रिसर्च पेपर, नतीजा हमेशा अकादमिक रूप से भरोसेमंद होता है। लेखन की दुनिया में यह एक बड़ा बदलाव है।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Mason</cite><span class="review__date">11 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="4 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-8.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Stylus ने मेरी लेखन यात्रा को काफ़ी आसान और मज़ेदार बना दिया है। सोचा भी नहीं था कि AI टेक्स्ट इतना गहरा, इतना व्यवस्थित और हर व्यक्ति की ज़रूरत के हिसाब से हो सकता है।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Isabella</cite><span class="review__date">30 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="5 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-5.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>जब मैं “write my essay AI” खोज रहा था, तब इतना बढ़िया नतीजा मिलने की उम्मीद नहीं थी। अब यह मेरा पक्का टूल है, डेडलाइन हमेशा निकल आती है।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Leo</cite><span class="review__date">6 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="6 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-10.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>यार, यह AI निबंध लेखक मुझे कुछ लोगों से भी बेहतर समझता है। जैसे कोई दोस्त हो जो खुद भी बढ़िया लेखक हो और 24/7 आपके लिए मौजूद रहे।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Rebecca</cite><span class="review__date">28 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="7 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-1.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>ऐसी AI वेबसाइट मिलना जो इतनी सटीकता और रचनात्मकता से निबंध लिखे, उम्मीद से परे और कमाल का अनुभव था।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">James</cite><span class="review__date">10 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="8 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>निबंधों की क्वालिटी बस शानदार है। लगता है जैसे मेरा अपना निजी लेखन सहायक हो।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Sophia</cite><span class="review__date">22 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="9 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-7.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>शुरू में मुझे शक था, लेकिन निबंध लिखने के लिए यह सबसे अच्छी AI वेबसाइट है। निबंध सुसंगत, अच्छी बनावट वाले और बहुत गहरे होते हैं!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Samantha</cite><span class="review__date">27 November</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="10 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-3.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>इस ऑटोमैटिक निबंध लेखक ने मेरे असाइनमेंट करने का तरीका ही बदल दिया। इसकी सरलता और भरोसेमंदी मुझे बहुत पसंद है।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Oliver</cite><span class="review__date">17 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="11 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-11.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>साहित्य की छात्रा होने के नाते मेरे लिए अच्छा AI निबंध लेखक ढूँढना बहुत ज़रूरी था। जो पेपर मिला वह मेरी उम्मीद से भी बेहतर था, इतना सटीक और इतना निखरा हुआ!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Miranda</cite><span class="review__date">5 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="12 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>इस AI बॉट निबंध लेखक का इस्तेमाल करने से मेरे लेखन का स्तर काफ़ी ऊपर उठ गया है। यह तेज़ है, असरदार है, और निबंध हमेशा लाजवाब होते हैं।</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Emily</cite><span class="review__date">23 September</span></footer>
+                </article>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="slider__controls">
+            <button class="slider__arrow" type="button" data-slider-prev aria-label="पिछले रिव्यू">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-l"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots role="group" aria-label="रिव्यू का पेज चुनें" data-label="रिव्यू का पेज {n} दिखाएँ"></div>
+            <button class="slider__arrow" type="button" data-slider-next aria-label="अगले रिव्यू">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-r"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="ratings reveal">
+          <li class="rating">
+            <img src="../assets/img/rating-1.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">औसत रेटिंग 5 में से 4.9</span>
+          </li>
+          <li class="rating">
+            <img src="../assets/img/rating-2.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">औसत रेटिंग 5 में से 4.9</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center team__title reveal">Stylus को अमेरिकी विश्वविद्यालयों के ग्रेजुएट्स की एक टीम ने स्टूडेंट्स की अगली पीढ़ी की मदद के लिए बनाया है</h2>
+
+        <div class="team">
+          <div class="team__col">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI सिक्योरिटी एनालिस्ट</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">कंप्यूटर विज़न इंजीनियर</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">बिग डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">डीप लर्निंग इंजीनियर</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI सिक्योरिटी एनालिस्ट</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">कंप्यूटर विज़न इंजीनियर</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">बिग डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">डीप लर्निंग इंजीनियर</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="team__col team__col--reverse">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">बिग डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">कंप्यूटर विज़न इंजीनियर</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">डीप लर्निंग इंजीनियर</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI सिक्योरिटी एनालिस्ट</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">बिग डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">डेटा साइंटिस्ट</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">कंप्यूटर विज़न इंजीनियर</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">डीप लर्निंग इंजीनियर</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">AI सिक्योरिटी एनालिस्ट</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="team__outro">
+          <p class="team__goal reveal">हमारा लक्ष्य डिग्री हासिल कर रहे स्टूडेंट्स की AI से मदद करना है। हमारे AI निबंध बिल्डर में मुफ़्त विकल्प भी हैं, ताकि कम बजट वाले स्टूडेंट्स के साथ मिलकर लिखा जा सके।</p>
+
+          <div class="unis reveal" role="group" aria-label="हमारी टीम ने जिन विश्वविद्यालयों से पढ़ाई की">
+            <img src="../assets/img/uni-1.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-2.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-3.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-4.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-5.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-6.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+          </div>
+
+          <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+            AI को-राइटर अभी आज़माएँ
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__brand" href="#top" aria-label="Stylus AI — होम">
+        <img src="../assets/img/logo-mark.svg" width="56" height="56" alt="Stylus AI">
+      </a>
+      <nav class="footer__nav" aria-label="फ़ुटर नेविगेशन">
+        <ul>
+          <li><a href="https://mystylus.ai/about-us/">हमारे बारे में</a></li>
+          <li><a href="#how-it-works">यह कैसे काम करता है</a></li>
+          <li><a href="#reviews">रिव्यू</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__mid">
+      <ul class="footer__pay" aria-label="स्वीकार किए जाने वाले भुगतान तरीके">
+        <li><img src="../assets/img/pay-1.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-2.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-3.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-4.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-5.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-6.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="X पर Stylus AI"><img src="../assets/img/social-x.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.instagram.com/mystylus.ai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram पर Stylus AI"><img src="../assets/img/social-instagram.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.facebook.com/aistylus/" target="_blank" rel="noopener noreferrer" aria-label="Facebook पर Stylus AI"><img src="../assets/img/social-facebook.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord पर Stylus AI"><img src="../assets/img/social-discord.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer__contact">
+      <p class="footer__contacts">
+        <a href="tel:+18882704473">+1 888 270 4473</a>
+        <span class="footer__dot" aria-hidden="true"></span>
+        <a href="mailto:support@mystylus.ai">support@mystylus.ai</a>
+      </p>
+      <p class="footer__address">Panimpex Ltd, 25 Martiou, 27, D. Michael Tower, office 105A, Egkomi, 2408, Nicosia, Cyprus</p>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span data-year>2024</span> Stylus. सर्वाधिकार सुरक्षित</p>
+      <ul class="footer__legal">
+        <li><a href="https://mystylus.ai/terms-conditions/">सेवा की शर्तें</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/privacy-policy/">Cookie और प्राइवेसी नीति</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/essay-title-generator/">निबंध टाइटल जेनरेटर</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

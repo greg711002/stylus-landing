@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stylus AI — научные работы быстро, просто и персонализированно</title>
+<meta name="description" content="Stylus AI помогает быстрее писать научные работы и эссе. ИИ находит источники и сам оформляет ссылки, текст выглядит естественно и не определяется ИИ-детекторами, а на каждом шаге вы получаете реальные подсказки. Начните писать бесплатно.">
+<meta name="theme-color" content="#f4f8fb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stylus AI — научные работы быстро, просто и персонализированно">
+<meta property="og:description" content="ИИ находит источники, текст выглядит естественно и не определяется ИИ-детекторами, а на каждом шаге работы вы получаете реальную поддержку.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="id_ID">
+<link rel="alternate" hreflang="en" href="/">
+<link rel="alternate" hreflang="pl" href="/pl/">
+<link rel="alternate" hreflang="ru" href="/ru/">
+<link rel="alternate" hreflang="zh" href="/zh/">
+<link rel="alternate" hreflang="es" href="/es/">
+<link rel="alternate" hreflang="hi" href="/hi/">
+<link rel="alternate" hreflang="pt" href="/pt/">
+<link rel="alternate" hreflang="bn" href="/bn/">
+<link rel="alternate" hreflang="fr" href="/fr/">
+<link rel="alternate" hreflang="de" href="/de/">
+<link rel="alternate" hreflang="ja" href="/ja/">
+<link rel="alternate" hreflang="ar" href="/ar/">
+<link rel="alternate" hreflang="ko" href="/ko/">
+<link rel="alternate" hreflang="it" href="/it/">
+<link rel="alternate" hreflang="tr" href="/tr/">
+<link rel="alternate" hreflang="id" href="/id/">
+<link rel="alternate" hreflang="x-default" href="/">
+<!-- Before publishing add absolute og:url + og:image (1200x630) and a canonical link for the real production domain. -->
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Stylus AI">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../assets/fonts/Stolzl-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../assets/fonts/Stolzl-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="../assets/img/hero-app.webp"
+      imagesrcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+      imagesizes="(max-width: 900px) 92vw, 48vw">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none">
+    <path d="M4.5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M12.4 5.7 18.7 12l-6.3 6.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none">
+    <path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none">
+    <path d="M9.5 5.5 16 12l-6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none">
+    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none">
+    <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar" aria-label="Основная навигация">
+      <a class="navbar__brand" href="#top" aria-label="Stylus AI — на главную">
+        <img src="../assets/img/logo.png" width="256" height="256" alt="Stylus AI">
+      </a>
+
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span class="sr-only">Меню</span>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--open" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--close" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <div class="navbar__menu" id="nav-menu" data-nav-menu>
+        <details class="nav-picker">
+          <summary class="nav-picker__summary">Меню<span class="nav-picker__caret" aria-hidden="true"></span></summary>
+          <ul class="navbar__links nav-picker__list">
+            <li><a href="#how-it-works">Как это работает</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+          </ul>
+        </details>
+        <div class="navbar__actions">
+          <div class="lang-switch" role="group" aria-label="Язык">
+            <details class="lang-picker">
+              <summary class="lang lang--current" aria-current="true" lang="ru">RU<span class="lang-picker__caret" aria-hidden="true"></span></summary>
+              <ul class="lang-picker__list">
+                <li><a class="lang" href="/" hreflang="en" lang="en" aria-label="Язык: English">EN</a></li>
+                <li><a class="lang" href="/pl/" hreflang="pl" lang="pl" aria-label="Язык: Polski">PL</a></li>
+                <li><a class="lang" href="/zh/" hreflang="zh" lang="zh" aria-label="Язык: 中文（简体）">ZH</a></li>
+                <li><a class="lang" href="/es/" hreflang="es" lang="es" aria-label="Язык: Español">ES</a></li>
+                <li><a class="lang" href="/hi/" hreflang="hi" lang="hi" aria-label="Язык: हिन्दी">HI</a></li>
+                <li><a class="lang" href="/pt/" hreflang="pt" lang="pt" aria-label="Язык: Português (BR)">PT</a></li>
+                <li><a class="lang" href="/bn/" hreflang="bn" lang="bn" aria-label="Язык: বাংলা">BN</a></li>
+                <li><a class="lang" href="/fr/" hreflang="fr" lang="fr" aria-label="Язык: Français">FR</a></li>
+                <li><a class="lang" href="/de/" hreflang="de" lang="de" aria-label="Язык: Deutsch">DE</a></li>
+                <li><a class="lang" href="/ja/" hreflang="ja" lang="ja" aria-label="Язык: 日本語">JA</a></li>
+                <li><a class="lang" href="/ar/" hreflang="ar" lang="ar" aria-label="Язык: العربية">AR</a></li>
+                <li><a class="lang" href="/ko/" hreflang="ko" lang="ko" aria-label="Язык: 한국어">KO</a></li>
+                <li><a class="lang" href="/it/" hreflang="it" lang="it" aria-label="Язык: Italiano">IT</a></li>
+                <li><a class="lang" href="/tr/" hreflang="tr" lang="tr" aria-label="Язык: Türkçe">TR</a></li>
+                <li><a class="lang" href="/id/" hreflang="id" lang="id" aria-label="Язык: Bahasa Indonesia">ID</a></li>
+              </ul>
+            </details>
+          </div>
+          <a class="btn btn--ghost" href="https://mystylus.ai/login/">Войти</a>
+          <a class="btn btn--primary" href="https://mystylus.ai/onboarding/">
+            Попробовать
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <h1 class="hero__title">Пишите научные работы быстро, просто и персонализированно вместе со Stylus AI</h1>
+        <p class="hero__subtitle">Все тексты проходят любую проверку на плагиат и не определяются системами ИИ-детекции.</p>
+        <a class="btn btn--primary btn--lg" href="https://mystylus.ai/onboarding/">
+          Начать писать
+          <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <div class="hero__media reveal">
+        <img src="../assets/img/hero-app.webp"
+             srcset="../assets/img/hero-app-1080.webp 1080w, ../assets/img/hero-app.webp 1376w"
+             sizes="(max-width: 900px) 92vw, 48vw"
+             width="1376" height="1280" fetchpriority="high" decoding="async"
+             alt="Редактор Stylus AI: план научной работы рядом с абзацами, созданными ИИ, и предложенными источниками.">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="panel">
+        <div class="how">
+          <div class="how__intro">
+            <h2 class="h2 reveal">Используйте ИИ, чтобы писать эссе лучше</h2>
+
+            <ol class="steps">
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-1.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">Безупречные работы</h3>
+                  <p class="step__text">С ИИ-ассистентом академические тексты получаются без единой шероховатости.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-2.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">Продуктивная совместная работа</h3>
+                  <p class="step__text">Пишите быстро и результативно с умной поддержкой ИИ.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-3.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">Подробная обратная связь</h3>
+                  <p class="step__text">Получайте полезные советы и рекомендации от ИИ-редактора.</p>
+                </div>
+              </li>
+              <li class="step reveal">
+                <span class="step__marker">
+                  <img src="../assets/img/wand-4.png" width="56" height="57" alt="" loading="lazy" decoding="async">
+                </span>
+                <div class="step__body">
+                  <h3 class="step__title">Идеи и вдохновение</h3>
+                  <p class="step__text">Находите новые идеи и подходы в диалоге с ИИ-ботом.</p>
+                </div>
+              </li>
+            </ol>
+
+            <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+              Попробовать бесплатно
+              <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+
+          <ul class="cards">
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-1.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">Готовые источники</h3>
+              <p class="card__text">Забудьте о поиске! Наш ИИ находит лучшие источники и сам оформляет ссылки</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-2.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">Естественный текст</h3>
+              <p class="card__text">Наш ИИ обходит ИИ-детекторы и создаёт тексты, неотличимые от написанных человеком</p>
+            </li>
+            <li class="card reveal">
+              <span class="card__icon"><img src="../assets/img/feature-3.svg" width="40" height="40" alt="" loading="lazy" decoding="async"></span>
+              <h3 class="card__title">Реальная поддержка</h3>
+              <p class="card__text">Получайте подробную помощь на каждом этапе работы с нашим ИИ-ботом</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center reveal">Клиенты нас любят</h2>
+
+        <div class="slider reveal" data-slider role="region" aria-roledescription="carousel" aria-label="Отзывы клиентов">
+          <div class="slider__viewport">
+            <ul class="slider__track" data-slider-track>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="1 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-4.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Не ждал многого от ИИ-текстов, но здесь всё глубоко проработано и стилистически выверенно. Работа идёт гладко и быстро.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Nathan</cite><span class="review__date">10 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="2 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-9.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Я просто пишу свои мысли и пожелания, а этот инструмент превращает их в связные и убедительные тексты. Теперь это моё основное решение для любых письменных работ.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Aria</cite><span class="review__date">7 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="3 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-2.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Будь то короткое эссе с аргументацией или объёмная научная работа — результат всегда академически убедителен. Настоящий прорыв для тех, кто пишет.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Mason</cite><span class="review__date">11 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="4 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-8.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Со Stylus писать стало заметно приятнее и эффективнее. Не думал, что ИИ-тексты могут быть такими содержательными, хорошо выстроенными и подстроенными под конкретного человека.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Isabella</cite><span class="review__date">30 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="5 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-5.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Когда я искал «написать эссе с ИИ», я не ожидал такого результата. Теперь это мой основной инструмент, он всегда помогает уложиться в срок.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Leo</cite><span class="review__date">6 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="6 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-10.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Этот ИИ-помощник по эссе понимает меня лучше некоторых знакомых. Как друг, который к тому же профессионально пишет и всегда на связи.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Rebecca</cite><span class="review__date">28 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="7 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-1.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Найти сайт, где ИИ пишет эссе так точно и с такой фантазией, было неожиданно и очень здорово.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">James</cite><span class="review__date">10 August</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="8 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Качество эссе просто отличное. Ощущение, будто у меня личный помощник по текстам.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Sophia</cite><span class="review__date">22 September</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="9 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-7.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Сначала я сомневался, но это лучший сайт с ИИ для работы над эссе. Тексты связные, хорошо структурированные и очень содержательные!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Samantha</cite><span class="review__date">27 November</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="10 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-3.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Этот автоматический помощник изменил то, как я делаю свои задания. Подкупают простота и надёжность.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Oliver</cite><span class="review__date">17 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="11 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-11.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Я учусь на филолога, и хороший ИИ для эссе был мне жизненно необходим. Полученная работа превзошла ожидания: всё точно и отточено!</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Miranda</cite><span class="review__date">5 October</span></footer>
+                </article>
+              </li>
+
+              <li class="slider__slide" aria-roledescription="slide" aria-label="12 of 12">
+                <article class="review">
+                  <img class="review__avatar" src="../assets/img/avatar-6.png" width="40" height="40" alt="" loading="lazy" decoding="async">
+                  <blockquote class="review__quote"><p>Работа с этим ИИ-помощником заметно подняла уровень моих текстов. Быстро, эффективно, и эссе всегда отличные.</p></blockquote>
+                  <footer class="review__meta"><cite class="review__name">Emily</cite><span class="review__date">23 September</span></footer>
+                </article>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="slider__controls">
+            <button class="slider__arrow" type="button" data-slider-prev aria-label="Предыдущие отзывы">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-l"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots role="group" aria-label="Выбор страницы отзывов" data-label="Показать страницу отзывов {n}"></div>
+            <button class="slider__arrow" type="button" data-slider-next aria-label="Следующие отзывы">
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-chev-r"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="ratings reveal">
+          <li class="rating">
+            <img src="../assets/img/rating-1.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">Средняя оценка 4,9 из 5</span>
+          </li>
+          <li class="rating">
+            <img src="../assets/img/rating-2.svg" width="115" height="40" alt="" loading="lazy" decoding="async">
+            <span class="rating__score"><svg class="rating__star" width="24" height="24" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <span class="sr-only">Средняя оценка 4,9 из 5</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="panel">
+        <h2 class="h2 h2--center team__title reveal">Stylus создала команда выпускников американских университетов, чтобы помочь новому поколению студентов</h2>
+
+        <div class="team">
+          <div class="team__col">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Аналитик по безопасности ИИ</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Инженер компьютерного зрения</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Специалист по большим данным</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Инженер глубокого обучения</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Специалист по данным</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Аналитик по безопасности ИИ</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Инженер компьютерного зрения</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Специалист по большим данным</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Инженер глубокого обучения</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Специалист по данным</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="team__col team__col--reverse">
+            <ul class="team__list">
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Специалист по большим данным</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Специалист по данным</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Инженер компьютерного зрения</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Инженер глубокого обучения</p></div>
+                </article>
+              </li>
+              <li>
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Аналитик по безопасности ИИ</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-3.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Richi S</h3><p class="member__role">Специалист по большим данным</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-5.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mary T</h3><p class="member__role">Специалист по данным</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-1.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Carroll S</h3><p class="member__role">Инженер компьютерного зрения</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-4.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Li W</h3><p class="member__role">Инженер глубокого обучения</p></div>
+                </article>
+              </li>
+              <li aria-hidden="true">
+                <article class="member">
+                  <img src="../assets/img/team-2.png" width="64" height="64" alt="" loading="lazy" decoding="async">
+                  <div><h3 class="member__name">Mark V</h3><p class="member__role">Аналитик по безопасности ИИ</p></div>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="team__outro">
+          <p class="team__goal reveal">Наша цель — помочь студентам, которые получают образование, с помощью ИИ. В нашем конструкторе эссе есть бесплатные возможности, чтобы поддержать студентов с ограниченным бюджетом.</p>
+
+          <div class="unis reveal" role="group" aria-label="Университеты, которые окончила наша команда">
+            <img src="../assets/img/uni-1.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-2.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-3.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-4.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-5.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+            <img src="../assets/img/uni-6.svg" width="200" height="40" alt="" loading="lazy" decoding="async">
+          </div>
+
+          <a class="btn btn--primary reveal" href="https://mystylus.ai/onboarding/">
+            Попробовать ИИ-соавтора
+            <svg class="btn__icon" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__brand" href="#top" aria-label="Stylus AI — на главную">
+        <img src="../assets/img/logo-mark.svg" width="56" height="56" alt="Stylus AI">
+      </a>
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <ul>
+          <li><a href="https://mystylus.ai/about-us/">О нас</a></li>
+          <li><a href="#how-it-works">Как это работает</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__mid">
+      <ul class="footer__pay" aria-label="Принимаемые способы оплаты">
+        <li><img src="../assets/img/pay-1.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-2.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-3.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-4.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-5.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+        <li><img src="../assets/img/pay-6.svg" width="56" height="24" alt="" loading="lazy" decoding="async"></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI в X"><img src="../assets/img/social-x.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.instagram.com/mystylus.ai/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI в Instagram"><img src="../assets/img/social-instagram.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.facebook.com/aistylus/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI в Facebook"><img src="../assets/img/social-facebook.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Stylus AI в Discord"><img src="../assets/img/social-discord.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer__contact">
+      <p class="footer__contacts">
+        <a href="tel:+18882704473">+1 888 270 4473</a>
+        <span class="footer__dot" aria-hidden="true"></span>
+        <a href="mailto:support@mystylus.ai">support@mystylus.ai</a>
+      </p>
+      <p class="footer__address">Panimpex Ltd, 25 Martiou, 27, D. Michael Tower, office 105A, Egkomi, 2408, Nicosia, Cyprus</p>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span data-year>2024</span> Stylus. Все права защищены</p>
+      <ul class="footer__legal">
+        <li><a href="https://mystylus.ai/terms-conditions/">Условия использования</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/privacy-policy/">Политика cookie и конфиденциальности</a></li>
+        <li class="footer__dot" aria-hidden="true"></li>
+        <li><a href="https://mystylus.ai/essay-title-generator/">Генератор заголовков для эссе</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
